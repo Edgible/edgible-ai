@@ -216,7 +216,7 @@
     footer { padding: 32px 0; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
     footer a { color: var(--muted); }
     footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-    footer .foot-text { display: flex; flex-direction: column; gap: 4px; }
+    footer .foot-right { display: flex; align-items: center; gap: 20px; }
     footer .foot-logo img { display: block; height: 36px; width: auto; opacity: .9; }
 
     @media (max-width: 900px) {
@@ -548,11 +548,11 @@
 
 <footer>
   <div class="wrap">
-    <div class="foot-text">
-      <span>© 2026 Edgible. Your data's coming home™ is a trade mark of Edgible.</span>
+    <span>© 2026 Edgible. Your data's coming home™ is a trade mark of Edgible.</span>
+    <div class="foot-right">
       <span><a href="https://cards.edgible.org">Cards</a> · <a href="https://guides.edgible.com">Guides</a></span>
+      <a class="foot-logo" href="#"><img src="images/edgible-symbol-white.png" alt="Edgible"></a>
     </div>
-    <a class="foot-logo" href="#"><img src="images/edgible-symbol-white.png" alt="Edgible"></a>
   </div>
 </footer>
 
