@@ -110,9 +110,15 @@
     .timeline .ask { padding-left: 12px; border-left: 3px solid var(--yellow); color: var(--ink); font-style: italic; }
     .result { margin: 30px 0 0; padding-top: 22px; border-top: 1px solid var(--line); font-size: 22px; font-weight: 600; color: var(--heading); }
     .result span { color: var(--yellow); }
-    .asks { margin-top: 40px; }
-    .asks ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 12px; }
-    .asks li { padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); font-size: 15px; font-style: italic; background: rgba(10,10,76,.6); }
+    .asks { margin-top: 44px; }
+    .asks ul { list-style: none; margin: 0; padding: 0 0 12px; display: flex; flex-wrap: wrap; gap: 30px 20px; align-items: flex-start; }
+    /* Speech bubbles: light tints of the page's colours, each with a tail, slightly tilted */
+    .asks li { --tint: #eef1ff; position: relative; max-width: 340px; padding: 14px 20px; border-radius: 20px; background: var(--tint); color: #0d1450; font-size: 16px; line-height: 1.45; box-shadow: 0 6px 18px rgba(0,0,0,.25); transform: rotate(-1deg); }
+    .asks li::after { content: ""; position: absolute; bottom: -11px; left: 28px; border-style: solid; border-width: 12px 12px 0 0; border-color: var(--tint) transparent transparent transparent; }
+    .asks li:nth-child(even) { transform: rotate(1deg); }
+    .asks li:nth-child(even)::after { left: auto; right: 28px; border-width: 12px 0 0 12px; }
+    .asks li:nth-child(3n+2) { --tint: #fff4c7; }
+    .asks li:nth-child(3n) { --tint: #d8f4ec; }
     .aside { margin: 56px auto 0; max-width: 760px; text-align: center; font-size: clamp(22px, 2.8vw, 28px); line-height: 1.4; color: var(--heading); font-weight: 500; }
     .aside span { color: var(--yellow); }
     .ways-head { margin: 88px 0 28px; }
@@ -178,7 +184,7 @@
       .world .cols, .beliefs, .grid3, .ways, .headed .grid2, .stack-wrap, .timeline, .share-two { grid-template-columns: 1fr; }
       .timeline li::after { display: none; }
       .story-ex { padding: 28px 22px; }
-      .asks li { border-radius: 14px; }
+      .asks li { max-width: 100%; }
       .stack li { grid-template-columns: 1fr; gap: 4px; }
       .world .cols { gap: 8px; }
       .beliefs { gap: 28px; }
@@ -296,12 +302,12 @@
       <div class="asks">
         <p class="ex-label">Other things people ask</p>
         <ul>
-          <li>"We want our family photos off Google, but still easy to share with Grandma."</li>
-          <li>"Our team wants an AI that answers questions from our own documents, without sending them anywhere."</li>
-          <li>"I'd like my own AI assistant I can message from my phone, that gets things done on our own machine."</li>
-          <li>"Our club needs online court bookings that members can use from their phones."</li>
-          <li>"I'd like one place for the family's passwords that we control."</li>
-          <li>"We pay for website analytics. Could we run our own?"</li>
+          <li>We want our family photos off Google, but still easy to share with Grandma.</li>
+          <li>Our team wants an AI that answers questions from our own documents, without sending them anywhere.</li>
+          <li>I'd like my own AI assistant I can message from my phone, that gets things done on our own machine.</li>
+          <li>Our club needs online court bookings that members can use from their phones.</li>
+          <li>I'd like one place for the family's passwords that we control.</li>
+          <li>We pay for website analytics. Could we run our own?</li>
         </ul>
       </div>
       <p class="aside">"Isn't self-hosting for nerds?" <span>It was. Now your AI does the nerdy bits.</span></p>
