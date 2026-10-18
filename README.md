@@ -1,6 +1,6 @@
 # www.edgible.ai
 
-Edgible's marketing page: one static page, `index.html`, with the hero art in `images/`. The copy comes from the Vision 2028 doc's Messaging section; the art is the arrivals-gate sketch from `hq/brand/coming-home`.
+Edgible's marketing page: one static page, `index.html`, with the hero art in `images/`. The copy comes from the Vision 2028 doc's Messaging section; the hero and icons are in `images/` (the icon set is one sprite, `icons.svg`).
 
 Preview it locally:
 

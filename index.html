@@ -68,7 +68,7 @@
     .hero p.lede { font-size: clamp(19px, 2.2vw, 22px); color: var(--muted); max-width: 720px; margin: 0 0 34px; }
     .hero .ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
     /* The art's floor starts 76% down; the band carries it to the page's edges on wide screens. */
-    .hero .art { display: block; width: 100%; background: linear-gradient(to bottom, transparent 75.6%, var(--blue-mid) 75.6%, var(--blue-mid) 76.4%, #07073f 76.4%); }
+    .hero .art { display: block; width: 100%; padding-bottom: 24px; }
     .hero .art img { display: block; width: 100%; max-width: 1200px; height: auto; margin: 0 auto; }
 
     /* Sections */
@@ -78,6 +78,12 @@
     h2 { font-size: clamp(32px, 4.4vw, 50px); line-height: 1.1; letter-spacing: -.015em; margin: 0 0 20px; color: var(--heading); font-weight: 700; }
     h3 { font-weight: 600; }
     .intro { font-size: 21px; color: var(--muted); max-width: 740px; margin: 0 0 52px; }
+
+    /* Icon tiles: the sprite in images/icons.svg */
+    .ico { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: var(--surface); border: 1px solid var(--blue-mid); margin-bottom: 16px; }
+    .ico svg { width: 38px; height: 38px; }
+    .ico.sm { width: 40px; height: 40px; border-radius: 11px; margin: 0; }
+    .ico.sm svg { width: 28px; height: 28px; }
 
     /* 2. The world we're entering */
     .world .cols { display: grid; grid-template-columns: 5fr 6fr; gap: 56px; align-items: start; }
@@ -156,7 +162,8 @@
     /* 6. Not another tunnel */
     .stack-wrap { display: grid; grid-template-columns: 6fr 5fr; gap: 48px; align-items: start; }
     .stack { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-    .stack li { display: grid; grid-template-columns: 110px 1fr; gap: 16px; align-items: center; padding: 18px 22px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); }
+    .stack li b { display: flex; align-items: center; gap: 12px; }
+    .stack li { display: grid; grid-template-columns: 150px 1fr; gap: 16px; align-items: center; padding: 18px 22px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); }
     .stack li b { font-size: 20px; font-weight: 600; color: var(--heading); }
     .stack li span { color: var(--muted); }
     .stack .l5 { border-left: 4px solid var(--yellow); }
@@ -226,8 +233,8 @@
       </div>
     </div>
     <div class="art">
-      <img src="images/arrivals-gate-night.svg" width="1200" height="500"
-           alt="An airport arrivals hall at night. A small, smiling yellow block carrying a suitcase walks out of a warmly lit gate towards a person with open arms and a child holding a HOME sign. The arrivals board reads: From the cloud, landed. Your data, home.">
+      <img src="images/hero-home.svg" width="1200" height="440"
+           alt="A small, smiling yellow block, your data, travels along a dotted path from a faded cloud to a glowing house, with badges for a padlock, a tested check and AI beside the house.">
     </div>
   </section>
 
@@ -255,14 +262,17 @@
       <p class="intro">Models will change. Agents will change. Platforms will come and go. What lasts is the data: your members, your clients, your family's photos. And every new AI makes it worth more. Edgible exists to give you the confidence to keep it close.</p>
       <div class="beliefs">
         <div class="belief">
+          <span class="ico" aria-hidden="true"><svg><use href="images/icons.svg#data"/></svg></span>
           <h3>Your data is the value</h3>
           <p>Whoever holds your data holds the value. It should be you, not the platform you happen to use this year.</p>
         </div>
         <div class="belief">
+          <span class="ico" aria-hidden="true"><svg><use href="images/icons.svg#home"/></svg></span>
           <h3>It belongs close to you</h3>
           <p>On a computer at home or in the office, or a small server of your own, where you and your AI can reach it from anywhere.</p>
         </div>
         <div class="belief">
+          <span class="ico" aria-hidden="true"><svg><use href="images/icons.svg#tested"/></svg></span>
           <h3>Trust should come with proof</h3>
           <p>Not a promise in the terms and conditions, but evidence you can see: where your data is, and that it's safe.</p>
         </div>
@@ -318,6 +328,7 @@
       </div>
       <div class="ways">
         <div class="way">
+          <span class="ico" aria-hidden="true"><svg><use href="images/icons.svg#home"/></svg></span>
           <p class="stay">Stays for years</p>
           <h4>The keeper</h4>
           <p class="tag">A safe home</p>
@@ -325,6 +336,7 @@
           <p class="eg">The tennis club's court bookings, the family's photos, a firm's knowledge base.</p>
         </div>
         <div class="way">
+          <span class="ico" aria-hidden="true"><svg><use href="images/icons.svg#guest"/></svg></span>
           <p class="stay">Stays for weeks</p>
           <h4>The guest</h4>
           <p class="tag">A guest room, with a check-out date</p>
@@ -332,6 +344,7 @@
           <p class="eg">Sign-ups for a weekend tournament, a wedding's shared photos, a data room for an audit.</p>
         </div>
         <div class="way">
+          <span class="ico" aria-hidden="true"><svg><use href="images/icons.svg#clean"/></svg></span>
           <p class="stay">Stays for minutes</p>
           <h4>The job</h4>
           <p class="tag">A clean room</p>
@@ -354,10 +367,12 @@
       </figure>
       <div class="share-two">
         <div>
+          <span class="ico" aria-hidden="true"><svg><use href="images/icons.svg#people"/></svg></span>
           <h3>Share what you run</h3>
           <p>With the people around you: your club, your team, your family. You choose who gets in.</p>
         </div>
         <div>
+          <span class="ico" aria-hidden="true"><svg><use href="images/icons.svg#share"/></svg></span>
           <h3>Share how you run it</h3>
           <p>With everyone. Every recipe shared back makes every AI better at helping the next person.</p>
         </div>
@@ -377,22 +392,27 @@
       <p class="intro">Before long you'll talk to any AI, and it will build and run things for you. When it needs somewhere to keep them, that place should be yours. That's what we're building.</p>
       <div class="grid2">
         <div class="future wide">
+          <span class="ico" aria-hidden="true"><svg><use href="images/icons.svg#shared"/></svg></span>
           <h3>Machines you can share</h3>
           <p>Invite people into your organisation, and share the machines you choose with them. Your agents can then spread a big job across many computers, or borrow the one that has what the job needs, like a friend's powerful graphics card to run a larger AI model. Communities can pool what they have to take on problems together, and your data goes only where you choose, among people you trust.</p>
         </div>
         <div class="future">
+          <span class="ico" aria-hidden="true"><svg><use href="images/icons.svg#ai"/></svg></span>
           <h3>A home for your agents</h3>
           <p>Your agents, the small apps they write, and everything they remember, running on machines you control and reachable wherever you are.</p>
         </div>
         <div class="future">
+          <span class="ico" aria-hidden="true"><svg><use href="images/icons.svg#govern"/></svg></span>
           <h3>Agents that ask first</h3>
           <p>No agent deletes, publishes or spends without your yes. Each one can do only its own job, and you can switch any of them off.</p>
         </div>
         <div class="future">
+          <span class="ico" aria-hidden="true"><svg><use href="images/icons.svg#record"/></svg></span>
           <h3>A record you can read</h3>
           <p>Every week, a plain report: what ran, what changed, and which person or agent changed it. Clear enough for a committee, solid enough for a regulator.</p>
         </div>
         <div class="future">
+          <span class="ico" aria-hidden="true"><svg><use href="images/icons.svg#map"/></svg></span>
           <h3>Know where your data is</h3>
           <p>One map of everything you own: which app holds it, which machine it's on, and when it was last proven safe. Easy to move, easy to leave.</p>
         </div>
@@ -408,11 +428,11 @@
       <p class="intro">Putting an app online is becoming free: tunnels, hosting, even the code itself. What people will pay for, and what's hard to copy, is everything above it.</p>
       <div class="stack-wrap">
         <ol class="stack" aria-label="What Edgible does, from the ground up">
-          <li class="l5"><b>Govern</b><span>Agents act only within limits you set, and ask before anything risky.</span></li>
-          <li class="l4"><b>Prove</b><span>Evidence, not promises: tested, backed up, restore-proven, and who touched what.</span></li>
-          <li class="l3"><b>Keep</b><span>Backups, updates, moves and health, looked after for years, not just set up once.</span></li>
-          <li class="l2"><b>Run</b><span>Tested recipes that any AI can follow, for the apps and agents you rely on.</span></li>
-          <li class="l1"><b>Reach</b><span>A safe front door for every app. It matters, and it's where others stop.</span></li>
+          <li class="l5"><b><span class="ico sm" aria-hidden="true"><svg><use href="images/icons.svg#govern"/></svg></span>Govern</b><span>Agents act only within limits you set, and ask before anything risky.</span></li>
+          <li class="l4"><b><span class="ico sm" aria-hidden="true"><svg><use href="images/icons.svg#tested"/></svg></span>Prove</b><span>Evidence, not promises: tested, backed up, restore-proven, and who touched what.</span></li>
+          <li class="l3"><b><span class="ico sm" aria-hidden="true"><svg><use href="images/icons.svg#backup"/></svg></span>Keep</b><span>Backups, updates, moves and health, looked after for years, not just set up once.</span></li>
+          <li class="l2"><b><span class="ico sm" aria-hidden="true"><svg><use href="images/icons.svg#recipe"/></svg></span>Run</b><span>Tested recipes that any AI can follow, for the apps and agents you rely on.</span></li>
+          <li class="l1"><b><span class="ico sm" aria-hidden="true"><svg><use href="images/icons.svg#lock"/></svg></span>Reach</b><span>A safe front door for every app. It matters, and it's where others stop.</span></li>
         </ol>
         <div class="compounds">
           <h3>What compounds</h3>
