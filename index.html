@@ -210,9 +210,19 @@
     .compounds p { margin: 0; color: var(--muted); }
 
     /* Closing call */
-    .closing { text-align: center; background: radial-gradient(ellipse at 50% 0%, rgba(255,210,31,.10), transparent 60%), var(--bg-alt); border-top: 1px solid var(--line); }
-    .closing p { color: var(--muted); font-size: 20px; max-width: 620px; margin: 0 auto 32px; }
-    .closing .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .closing { background: radial-gradient(ellipse at 50% 0%, rgba(255,210,31,.10), transparent 60%), var(--bg-alt); border-top: 1px solid var(--line); }
+    .closing .close-lede { color: var(--muted); font-size: 20px; max-width: 680px; margin: 0 0 40px; }
+    .start-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: s; }
+    .start-steps li { counter-increment: s; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 24px; display: flex; flex-direction: column; backdrop-filter: blur(8px); }
+    .start-steps li::before { content: counter(s); width: 32px; height: 32px; border-radius: 50%; background: var(--yellow); color: var(--bg); font-weight: 700; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .start-steps h3 { margin: 0 0 8px; font-size: 21px; color: var(--heading); }
+    .start-steps p { margin: 0 0 14px; color: var(--muted); }
+    /* What to say to your AI: a little prompt box */
+    .start-steps .say { margin: auto 0 0; padding: 12px 14px 12px 38px; position: relative; border-radius: 12px; background: rgba(0,0,0,.28); border: 1px solid var(--line); color: var(--ink); font-size: 15px; line-height: 1.45; }
+    .start-steps .say::before { content: "›"; position: absolute; left: 14px; top: 9px; color: var(--yellow); font-size: 20px; font-weight: 700; }
+    .needs { margin: 32px 0 28px; color: var(--muted); font-size: 17px; max-width: 820px; }
+    .needs strong { color: var(--heading); font-weight: 700; }
+    .closing .ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 
     footer { padding: 32px 0; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
     footer a { color: var(--muted); }
@@ -221,7 +231,7 @@
     footer .foot-logo img { display: block; height: 36px; width: auto; opacity: .9; }
 
     @media (max-width: 900px) {
-      .world .cols, .beliefs, .grid3, .ways, .headed .grid2, .stack-wrap, .timeline, .share-two { grid-template-columns: 1fr; }
+      .world .cols, .beliefs, .grid3, .ways, .headed .grid2, .stack-wrap, .timeline, .share-two, .start-steps { grid-template-columns: 1fr; }
       .timeline li::after { display: none; }
       .story-ex { padding: 28px 22px; }
       .asks li { max-width: 100%; }
@@ -253,7 +263,7 @@
       <a class="hide-sm" href="#today">What we do</a>
       <a href="#headed">Where we're headed</a>
       <a class="hide-sm" href="#moat">Why Edgible</a>
-      <a class="hide-sm" href="https://guides.edgible.com/guides/start-here/index.html">Get started</a>
+      <a class="hide-sm" href="#start">Get started</a>
     </nav>
   </div>
 </header>
@@ -266,7 +276,7 @@
       <h1 id="hero-title">Your data's coming home.<span class="tm">™</span></h1>
       <p class="lede">Edgible lets your AI set up the apps and agents you rely on, on computers you control: at home, in the office, or a small server of your own. Then we keep them reachable, backed up and provably safe. All the convenience of the cloud, without giving your data away.</p>
       <div class="ctas">
-        <a class="btn primary" href="https://guides.edgible.com/guides/start-here/index.html">Get started</a>
+        <a class="btn primary" href="#start">Get started</a>
         <a class="btn secondary" href="#headed">Where we're headed</a>
       </div>
     </div>
@@ -534,14 +544,33 @@
     </div>
   </section>
 
-  <!-- Closing call -->
-  <section class="closing" aria-labelledby="close-title">
+  <!-- Get started: with your AI -->
+  <section class="closing" id="start" aria-labelledby="close-title">
     <div class="wrap">
+      <p class="kicker">Get started</p>
       <h2 id="close-title">Bring your data home.</h2>
-      <p>Start with one app on a machine you already have. Your AI will take it from there.</p>
+      <p class="close-lede">Start with one app on a machine you already have. Three things to say to your AI, and it takes it from there.</p>
+      <ol class="start-steps">
+        <li>
+          <h3>Give your AI the Edgible skill</h3>
+          <p>The skill teaches your AI our tested recipes and how to look after them. We recommend Claude Code. It also works with Codex and other assistants that read skills, and we measure how well each one does.</p>
+          <p class="say">Install the Edgible skill from github.com/edgible-org/card-kit</p>
+        </li>
+        <li>
+          <h3>Ask it to set up Edgible</h3>
+          <p>It checks your computer, helps you create a free account, and asks what to call the machine and whether it should stay on. It asks before anything that changes your system.</p>
+          <p class="say">Set up Edgible on this computer so I can run my own apps.</p>
+        </li>
+        <li>
+          <h3>Ask for what you need</h3>
+          <p>In your own words. It suggests options, recommends one, and sets it up with you.</p>
+          <p class="say">It costs us $40 a month to host our small website. Is there a better way?</p>
+        </li>
+      </ol>
+      <p class="needs"><strong>What you need:</strong> a computer that stays on (or a small server of your own for a few dollars a month), and an AI assistant that can run commands on it. Edgible is free during the public beta.</p>
       <div class="ctas">
-        <a class="btn primary" href="https://guides.edgible.com/guides/start-here/index.html">Get started</a>
         <a class="btn secondary" href="https://cards.edgible.org">See the tested recipes</a>
+        <a class="btn secondary" href="https://guides.edgible.com/guides/start-here/index.html">Prefer to do it by hand?</a>
       </div>
     </div>
   </section>
