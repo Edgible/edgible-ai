@@ -9,3 +9,5 @@ python3 -m http.server 8787 --bind 127.0.0.1   # then open http://127.0.0.1:8787
 ```
 
 It is meant to be served by the static-site card on an Edgible device, under www.edgible.ai.
+
+The typeface is Nexa, Edgible's own, served from `fonts/` as www.edgible.com does. It is a licensed font: keep `fonts/` out of any public copy of this repo unless the licence allows it.
