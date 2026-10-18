@@ -43,6 +43,6 @@
 <text x="720" y="486" text-anchor="middle" fill="#ffffff" font-size="19" font-weight="500">Tested and</text>
 <text x="720" y="510" text-anchor="middle" fill="#ffffff" font-size="19" font-weight="500">running</text>
 <circle cx="950" cy="420" r="36" fill="#0d1a6b" stroke="#4a5cc0" stroke-width="2"/><g transform="translate(950 420)"><path d="M0 -12 L11 0 L4 0 L4 12 L-4 12 L-4 0 L-11 0 Z" fill="#ffffff"/></g>
-<text x="950" y="486" text-anchor="middle" fill="#ffffff" font-size="19" font-weight="500">You share</text>
-<text x="950" y="510" text-anchor="middle" fill="#ffffff" font-size="19" font-weight="500">it back</text>
+<text x="950" y="486" text-anchor="middle" fill="#ffffff" font-size="19" font-weight="500">You choose to</text>
+<text x="950" y="510" text-anchor="middle" fill="#ffffff" font-size="19" font-weight="500">share it back</text>
 </svg>
