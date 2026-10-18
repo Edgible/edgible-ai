@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edgible: Your data's coming home</title>
   <meta name="description" content="AI agents are about to run much of our lives, and they only work when they know us. Edgible keeps the data they need on machines you control, looked after and provably safe.">
-  <meta name="theme-color" content="#000033">
+  <meta name="theme-color" content="#111827">
   <meta property="og:title" content="Edgible: Your data's coming home">
   <meta property="og:description" content="AI agents only work when they know us. Edgible keeps that data on machines you control, looked after and provably safe.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,11 +13,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Edgible blue (#000033) is the guides' --edgible-blue; #2e4a9e their --edgible-blue-mid. */
-      --bg: #000033;
-      --bg-alt: #04043f;
-      --surface: #0a0a4c;
-      --line: #1d2876;
+      /* The sky, glass and lines are www.edgible.com's (night-1..3, --glass, --glass-border, --line). */
+      --night-1: #111827;
+      --night-2: #1e293b;
+      --night-3: #312e81;
+      --bg: var(--night-1);
+      --bg-alt: rgba(255,255,255,.03);
+      --surface: rgba(255,255,255,.05);
+      --line: rgba(255,255,255,.12);
       --blue-mid: #2e4a9e;
       --yellow: #ffd21f;
       --coral: #ff7a59;
@@ -29,13 +32,13 @@
       --wrap: 1120px;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; background: var(--bg); }
+    html { scroll-behavior: smooth; background: linear-gradient(135deg, var(--night-1) 0%, var(--night-2) 45%, var(--night-3) 100%) fixed; background-color: var(--night-1); }
     body {
       margin: 0;
       font-family: Jost, system-ui, -apple-system, "Segoe UI", sans-serif;
       font-size: 17px;
       color: var(--ink);
-      background: var(--bg);
+      background: transparent;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
@@ -43,7 +46,7 @@
     .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
 
     /* Top bar */
-    header.bar { position: sticky; top: 0; z-index: 10; background: rgba(0,0,51,.88); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    header.bar { position: sticky; top: 0; z-index: 10; background: rgba(17,24,39,.72); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
     header.bar .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
     .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 22px; color: var(--heading); text-decoration: none; letter-spacing: -.01em; }
     .logo .mark { width: 28px; height: 28px; border-radius: 8px; background: var(--yellow); position: relative; }
@@ -61,7 +64,7 @@
     .btn.secondary:hover { border-color: var(--muted); }
 
     /* Hero */
-    .hero { padding: 80px 0 0; overflow: hidden; background: radial-gradient(ellipse at 70% 100%, rgba(46,74,158,.35), transparent 60%), var(--bg); }
+    .hero { padding: 80px 0 0; overflow: hidden; background: radial-gradient(ellipse at 70% 100%, rgba(99,102,241,.18), transparent 60%); }
     .hero .eyebrow { display: inline-block; font-weight: 600; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
     .hero h1 { font-size: clamp(44px, 7.4vw, 84px); line-height: 1.02; letter-spacing: -.02em; margin: 0 0 22px; color: var(--heading); font-weight: 700; }
     .hero h1 .tm { font-size: .28em; vertical-align: super; font-weight: 500; color: var(--muted); margin-left: 2px; }
@@ -79,7 +82,29 @@
     h3 { font-weight: 600; }
     .intro { font-size: 21px; color: var(--muted); max-width: 740px; margin: 0 0 52px; }
 
+    /* The sky: www.edgible.com's starfield and meteors */
+    .sky { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+    .stars { position: absolute; inset: 0; background-repeat: repeat; background-size: 720px 480px; }
+    .stars-a { background-image: radial-gradient(1px 1px at 40px 60px, rgba(255,255,255,.7) 50%, transparent 51%), radial-gradient(1px 1px at 180px 200px, rgba(165,180,252,.7) 50%, transparent 51%), radial-gradient(1.5px 1.5px at 320px 90px, rgba(255,255,255,.5) 50%, transparent 51%), radial-gradient(1px 1px at 460px 300px, rgba(103,232,249,.6) 50%, transparent 51%), radial-gradient(1px 1px at 600px 150px, rgba(255,255,255,.6) 50%, transparent 51%), radial-gradient(1.5px 1.5px at 680px 380px, rgba(129,140,248,.6) 50%, transparent 51%); }
+    .stars-b { background-image: radial-gradient(1px 1px at 100px 380px, rgba(255,255,255,.5) 50%, transparent 51%), radial-gradient(1.5px 1.5px at 240px 40px, rgba(196,181,253,.6) 50%, transparent 51%), radial-gradient(1px 1px at 400px 220px, rgba(255,255,255,.65) 50%, transparent 51%), radial-gradient(1px 1px at 540px 420px, rgba(165,180,252,.5) 50%, transparent 51%), radial-gradient(1px 1px at 60px 240px, rgba(249,168,212,.45) 50%, transparent 51%), radial-gradient(1px 1px at 300px 340px, rgba(110,231,183,.4) 50%, transparent 51%), radial-gradient(1.5px 1.5px at 660px 260px, rgba(255,255,255,.45) 50%, transparent 51%); }
+    .meteor { --trail: 90px; --d: 260px; position: absolute; top: -4px; width: 3px; height: 3px; border-radius: 50%; background: #fff; color: rgba(255,255,255,.8); opacity: 0; box-shadow: 0 0 6px 1px currentColor; }
+    .meteor::before { content: ""; position: absolute; width: var(--trail); height: 1.5px; left: 0; top: .75px; transform: rotate(-45deg); transform-origin: left center; background: linear-gradient(to right, currentColor, transparent); }
+    .m1 { left: 6%; --trail: 80px; } .m2 { left: 18%; background: #a5b4fc; color: #a5b4fc; --trail: 110px; --d: 280px; }
+    .m3 { left: 31%; background: #f9a8d4; color: #f9a8d4; --trail: 70px; } .m4 { left: 44%; background: #fcd34d; color: #fcd34d; --trail: 95px; }
+    .m5 { left: 57%; background: #67e8f9; color: #67e8f9; --trail: 100px; --d: 300px; } .m6 { left: 70%; --trail: 85px; }
+    .m7 { left: 82%; background: #c4b5fd; color: #c4b5fd; --trail: 90px; --d: 250px; } .m8 { left: 93%; background: #6ee7b7; color: #6ee7b7; --trail: 75px; }
+    @keyframes twinkle { 50% { opacity: .45; } }
+    @keyframes fall { 0%, 88% { opacity: 0; transform: translate(0); } 90% { opacity: 1; } to { opacity: 0; transform: translate(calc(-1 * var(--d)), var(--d)); } }
+    @media (prefers-reduced-motion: no-preference) {
+      .stars-a { animation: twinkle 5s ease-in-out infinite; } .stars-b { animation: twinkle 7s ease-in-out 2.2s infinite; }
+      .m1 { animation: fall 9s linear -7.8s infinite; } .m2 { animation: fall 11s linear -8.8s infinite; }
+      .m3 { animation: fall 12.5s linear -9.4s infinite; } .m4 { animation: fall 10s linear -6.3s infinite; }
+      .m5 { animation: fall 13s linear -8.2s infinite; } .m6 { animation: fall 10.5s linear -5.2s infinite; }
+      .m7 { animation: fall 12s linear -2.5s infinite; } .m8 { animation: fall 11.5s linear -3.7s infinite; }
+    }
+
     /* Icon tiles: the sprite in images/icons.svg */
+    .msg, .step, .way, .future, .story-ex, .share-two div, .stack li, .ico { backdrop-filter: blur(8px); }
     .ico { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: var(--surface); border: 1px solid var(--blue-mid); margin-bottom: 16px; }
     .ico svg { width: 38px; height: 38px; }
     .ico.sm { width: 40px; height: 40px; border-radius: 11px; margin: 0; }
@@ -148,7 +173,7 @@
     .together-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
 
     /* 5. Where we're headed */
-    .headed { background: radial-gradient(ellipse at 20% 0%, rgba(79,195,168,.12), transparent 55%), radial-gradient(ellipse at 90% 100%, rgba(255,210,31,.08), transparent 55%), var(--bg); }
+    .headed { background: radial-gradient(ellipse at 20% 0%, rgba(79,195,168,.12), transparent 55%), radial-gradient(ellipse at 90% 100%, rgba(255,210,31,.08), transparent 55%); }
     .headed .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .future { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 28px; }
     .future h3 { margin: 0 0 10px; font-size: 22px; color: var(--heading); }
@@ -207,6 +232,11 @@
   </style>
 </head>
 <body>
+<div class="sky" aria-hidden="true">
+  <div class="stars stars-a"></div><div class="stars stars-b"></div>
+  <span class="meteor m1"></span><span class="meteor m2"></span><span class="meteor m3"></span><span class="meteor m4"></span>
+  <span class="meteor m5"></span><span class="meteor m6"></span><span class="meteor m7"></span><span class="meteor m8"></span>
+</div>
 
 <header class="bar">
   <div class="wrap">
