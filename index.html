@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edgible: Your data's coming home</title>
-  <meta name="description" content="Edgible runs your apps and AI on machines you control, set up by your own AI and kept safe, so you get the convenience without giving your data away.">
+  <meta name="description" content="AI agents are about to run much of our lives, and they only work when they know us. Edgible keeps the data they need on machines you control, looked after and provably safe.">
   <meta name="theme-color" content="#000033">
   <meta property="og:title" content="Edgible: Your data's coming home">
-  <meta property="og:description" content="Run your apps and AI on machines you control. Your AI sets them up; Edgible keeps them safe.">
+  <meta property="og:description" content="AI agents only work when they know us. Edgible keeps that data on machines you control, looked after and provably safe.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -72,61 +72,53 @@
     .hero .art img { display: block; width: 100%; max-width: 1200px; height: auto; margin: 0 auto; }
 
     /* Sections */
-    section { padding: 96px 0; }
+    section { padding: 104px 0; }
     section.alt { background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .kicker { font-weight: 600; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: var(--coral); margin: 0 0 12px; }
-    h2 { font-size: clamp(32px, 4.4vw, 48px); line-height: 1.1; letter-spacing: -.015em; margin: 0 0 18px; color: var(--heading); font-weight: 700; }
+    h2 { font-size: clamp(32px, 4.4vw, 50px); line-height: 1.1; letter-spacing: -.015em; margin: 0 0 20px; color: var(--heading); font-weight: 700; }
     h3 { font-weight: 600; }
-    .intro { font-size: 20px; color: var(--muted); max-width: 720px; margin: 0 0 48px; }
+    .intro { font-size: 21px; color: var(--muted); max-width: 740px; margin: 0 0 52px; }
 
-    /* The four messages */
-    .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-    .msg { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 24px; }
-    .msg .num { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: var(--yellow); color: var(--bg); font-weight: 700; margin-bottom: 16px; }
-    .msg h3 { margin: 0 0 8px; font-size: 21px; color: var(--heading); }
-    .msg p { margin: 0; color: var(--muted); }
-    .msg .quote { margin-top: 14px; font-weight: 500; color: var(--ink); }
+    /* 2. The world we're entering */
+    .world .cols { display: grid; grid-template-columns: 5fr 6fr; gap: 56px; align-items: start; }
+    .world .story p { font-size: 20px; margin: 0 0 20px; color: var(--muted); }
+    .world strong { color: var(--yellow); font-weight: 500; }
 
-    /* Framing */
-    .framing .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-    .framing p { font-size: 19px; margin: 0 0 18px; color: var(--muted); }
-    .framing strong { color: var(--yellow); font-weight: 500; }
+    /* 3. Why it matters */
+    .beliefs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+    .belief { border-top: 2px solid var(--yellow); padding-top: 22px; }
+    .belief:nth-child(2) { border-top-color: var(--teal); }
+    .belief:nth-child(3) { border-top-color: var(--coral); }
+    .belief h3 { margin: 0 0 10px; font-size: 24px; color: var(--heading); line-height: 1.25; }
+    .belief p { margin: 0; color: var(--muted); font-size: 18px; }
 
-    /* How it works */
+    /* 4. What we do today */
     .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .step { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 26px; border-top: 4px solid var(--teal); }
-    .step:nth-child(2) { border-top-color: var(--yellow); }
-    .step:nth-child(3) { border-top-color: var(--coral); }
+    .step { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 26px; }
     .step h3 { margin: 0 0 10px; font-size: 22px; color: var(--heading); }
     .step p { margin: 0; color: var(--muted); }
-    .soon { display: inline-block; margin-left: 6px; padding: 1px 9px; border-radius: 999px; font-size: 13px; font-weight: 600; background: rgba(79,195,168,.14); color: var(--teal); vertical-align: middle; letter-spacing: .02em; }
-
-    /* Three ways in */
+    .step .ask { margin-top: 14px; padding-left: 14px; border-left: 3px solid var(--yellow); color: var(--ink); font-style: italic; }
+    .aside { margin: 56px auto 0; max-width: 760px; text-align: center; font-size: clamp(22px, 2.8vw, 28px); line-height: 1.4; color: var(--heading); font-weight: 500; }
+    .aside span { color: var(--yellow); }
+    .ways-head { margin: 88px 0 28px; }
+    .ways-head h3 { font-size: 28px; margin: 0 0 8px; color: var(--heading); }
+    .ways-head p { margin: 0; color: var(--muted); font-size: 19px; max-width: 700px; }
     .ways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .way { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 26px; display: flex; flex-direction: column; }
     .way .stay { font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
-    .way h3 { margin: 0 0 4px; font-size: 24px; color: var(--heading); }
+    .way h4 { margin: 0 0 4px; font-size: 24px; font-weight: 600; color: var(--heading); }
     .way .tag { font-weight: 500; color: var(--yellow); margin: 0 0 14px; }
     .way p { margin: 0 0 12px; color: var(--muted); }
     .way .eg { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); font-size: 15px; }
-    .ways-scale { display: flex; align-items: center; gap: 12px; margin: -28px 0 28px; color: var(--muted); font-size: 14px; letter-spacing: .06em; text-transform: uppercase; }
-    .ways-scale .bar { flex: 1; height: 2px; background: linear-gradient(to right, var(--teal), var(--yellow), var(--coral)); border-radius: 2px; }
 
-    /* Proof, not promises */
-    .evidence { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 26px; color: inherit; text-decoration: none; }
-    .evidence h3 { margin: 0 0 10px; font-size: 22px; color: var(--heading); }
-    .evidence p { margin: 0; color: var(--muted); }
-    .evidence .go { display: inline-block; margin-top: 16px; font-weight: 600; color: var(--yellow); }
-    a.evidence:hover { border-color: var(--blue-mid); }
-
-    /* Questions */
-    .faq { max-width: 820px; }
-    details { border-bottom: 1px solid var(--line); padding: 20px 0; }
-    summary { cursor: pointer; font-weight: 500; font-size: 19px; color: var(--heading); list-style: none; display: flex; justify-content: space-between; gap: 16px; }
-    summary::-webkit-details-marker { display: none; }
-    summary::after { content: "+"; font-weight: 400; font-size: 26px; line-height: 1; color: var(--yellow); }
-    details[open] summary::after { content: "–"; }
-    details p { margin: 12px 0 0; color: var(--muted); }
+    /* 5. Where we're headed */
+    .headed { background: radial-gradient(ellipse at 20% 0%, rgba(79,195,168,.12), transparent 55%), radial-gradient(ellipse at 90% 100%, rgba(255,210,31,.08), transparent 55%), var(--bg); }
+    .headed .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .future { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 28px; }
+    .future h3 { margin: 0 0 10px; font-size: 22px; color: var(--heading); }
+    .future p { margin: 0; color: var(--muted); }
+    .headline-close { margin: 64px 0 0; font-size: clamp(24px, 3.2vw, 34px); line-height: 1.3; font-weight: 600; color: var(--heading); max-width: 820px; }
+    .headline-close span { color: var(--yellow); }
 
     /* Closing call */
     .closing { text-align: center; background: radial-gradient(ellipse at 50% 0%, rgba(255,210,31,.10), transparent 60%), var(--bg-alt); border-top: 1px solid var(--line); }
@@ -138,17 +130,15 @@
     footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 
     @media (max-width: 900px) {
-      .grid4 { grid-template-columns: 1fr 1fr; }
-      .grid3, .ways, .framing .cols { grid-template-columns: 1fr; }
-      .framing .cols { gap: 8px; }
-      .ways-scale { display: none; }
+      .world .cols, .beliefs, .grid3, .ways, .headed .grid2 { grid-template-columns: 1fr; }
+      .world .cols { gap: 8px; }
+      .beliefs { gap: 28px; }
     }
     @media (max-width: 560px) {
       .wrap { padding: 0 16px; }
       nav.links { gap: 16px; font-size: 15px; }
       nav.links .hide-sm { display: none; }
-      .grid4 { grid-template-columns: 1fr; }
-      section { padding: 64px 0; }
+      section { padding: 72px 0; }
       .hero { padding-top: 48px; }
       .btn { width: 100%; text-align: center; }
     }
@@ -160,14 +150,15 @@
   <div class="wrap">
     <a class="logo" href="#"><span class="mark" aria-hidden="true"></span>Edgible</a>
     <nav class="links">
-      <a href="#how">How it works</a>
-      <a class="hide-sm" href="https://cards.edgible.org">Cards</a>
-      <a href="https://guides.edgible.com/guides/start-here/index.html">Get started</a>
+      <a class="hide-sm" href="#today">What we do</a>
+      <a href="#headed">Where we're headed</a>
+      <a class="hide-sm" href="https://guides.edgible.com/guides/start-here/index.html">Get started</a>
     </nav>
   </div>
 </header>
 
 <main>
+  <!-- 1. Hero -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap">
       <span class="eyebrow">The confidence to keep your data close</span>
@@ -175,7 +166,7 @@
       <p class="lede">Your AI runs your apps on your own machines, and Edgible keeps them safe. All the convenience, without giving your data away.</p>
       <div class="ctas">
         <a class="btn primary" href="https://guides.edgible.com/guides/start-here/index.html">Get started</a>
-        <a class="btn secondary" href="https://cards.edgible.org">Browse the cards</a>
+        <a class="btn secondary" href="#headed">Where we're headed</a>
       </div>
     </div>
     <div class="art">
@@ -184,170 +175,134 @@
     </div>
   </section>
 
-  <section class="alt" aria-labelledby="why-title">
-    <div class="wrap">
-      <p class="kicker">Why Edgible</p>
-      <h2 id="why-title">It's your data. Keep it.</h2>
-      <p class="intro">Models will change. Agents will change. Platforms will come and go. Your members' details, your clients' files and your family's photos last for decades, and every new AI makes them worth more.</p>
-      <div class="grid4">
-        <div class="msg">
-          <span class="num">1</span>
-          <h3>Your data is the value</h3>
-          <p>Whoever holds your data holds the value. It should be you.</p>
-          <p class="quote">"Your data is the most valuable thing you own. Keep it."</p>
-        </div>
-        <div class="msg">
-          <span class="num">2</span>
-          <h3>Provably yours</h3>
-          <p>Not a promise: evidence. Where it lives, that it's intact, and that you can move it.</p>
-          <p class="quote">"Know where it is, and that it's safe."</p>
-        </div>
-        <div class="msg">
-          <span class="num">3</span>
-          <h3>On your own machines</h3>
-          <p>A computer at home or in the office, or a small cloud server in your own account.</p>
-          <p class="quote">"It lives on your machines, not someone else's cloud."</p>
-        </div>
-        <div class="msg">
-          <span class="num">4</span>
-          <h3>Your AI does the work</h3>
-          <p>No servers to learn. Ask the AI you already use, and it sets things up properly.</p>
-          <p class="quote">"Ask your AI. Edgible does the rest."</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="framing" aria-labelledby="age-title">
+  <!-- 2. The world we're entering -->
+  <section class="alt world" aria-labelledby="world-title">
     <div class="wrap cols">
       <div>
-        <p class="kicker">The agent age</p>
-        <h2 id="age-title">AI is about to know everything about us.</h2>
+        <p class="kicker">The world we're entering</p>
+        <h2 id="world-title">AI is about to know everything about us.</h2>
       </div>
-      <div>
-        <p>Soon each of us will have agents working on our behalf, booking, writing, remembering and deciding. They only work well when they know us: our files, our habits, our clients, our children.</p>
-        <p>The easy place to run all of that is a big platform's cloud, and the price is quiet but enormous: <strong>every agent's memory, every app's records and every question we ask becomes data held, and often used, by someone else.</strong></p>
-        <p>Edgible lets your apps and agents run where your data lives, on machines you control. You shouldn't have to choose between capable AI and control of your own life.</p>
+      <div class="story">
+        <p>Soon each of us will have AI agents working on our behalf: booking, writing, remembering, deciding. They'll build small apps on the fly, for one family, one club, one firm, and throw most of them away.</p>
+        <p>They only work well when they know us: our files, our habits, our clients, our children. It will be the most personal computing has ever been.</p>
+        <p>The easy place to run all of it is a big platform's cloud, and the price is quiet but enormous: <strong>every agent's memory, every app's records and every question we ask becomes data held, and often used, by someone else.</strong></p>
+        <p>It doesn't have to be that way.</p>
       </div>
     </div>
   </section>
 
-  <section class="alt" id="how" aria-labelledby="how-title">
+  <!-- 3. Why it matters -->
+  <section aria-labelledby="why-title">
     <div class="wrap">
-      <p class="kicker">How it works</p>
-      <h2 id="how-title">Three parts, so you never think about servers.</h2>
-      <p class="intro">At home, in the office or on a small cloud server, it works the same way.</p>
+      <p class="kicker">Why it matters</p>
+      <h2 id="why-title">It's your data. Keep it.</h2>
+      <p class="intro">Models will change. Agents will change. Platforms will come and go. What lasts is the data: your members, your clients, your family's photos. And every new AI makes it worth more.</p>
+      <div class="beliefs">
+        <div class="belief">
+          <h3>Your data is the value</h3>
+          <p>Whoever holds your data holds the value. It should be you, not the platform you happen to use this year.</p>
+        </div>
+        <div class="belief">
+          <h3>It belongs close to you</h3>
+          <p>On a computer at home or in the office, or a small server of your own, where you and your AI can reach it from anywhere.</p>
+        </div>
+        <div class="belief">
+          <h3>Trust should come with proof</h3>
+          <p>Not a promise in the terms and conditions, but evidence you can see: where your data is, and that it's safe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. What we do today -->
+  <section class="alt" id="today" aria-labelledby="today-title">
+    <div class="wrap">
+      <p class="kicker">What we do today</p>
+      <h2 id="today-title">Your AI sets it up. We keep it safe.</h2>
+      <p class="intro">You don't need to know about servers. You need to say what you want.</p>
       <div class="grid3">
         <div class="step">
-          <h3>A safe front door</h3>
-          <p>A small agent on your machine connects out to Edgible, so each app gets its own web address, HTTPS and sign-in. Nothing opens your home network, and your own domain needs just one DNS record.</p>
+          <h3>Ask in your own words</h3>
+          <p>Tell the AI you already use what you need. It picks from recipes we've tested, and sets them up on your own machine.</p>
+          <p class="ask">"Pocket is shutting down. I want to keep my saved articles and still read them on my phone."</p>
         </div>
         <div class="step">
-          <h3>Recipes your AI can follow</h3>
-          <p>Tested cards for apps you'd otherwise rent: bookmarks, photos, passwords, analytics, private AI and more. A skill teaches your AI to choose one with you and set it up properly.</p>
+          <h3>Safe, and reachable anywhere</h3>
+          <p>Each app gets its own web address and a padlock, so it works from your phone wherever you are, and nobody gets into your home network.</p>
         </div>
         <div class="step">
           <h3>Looked after, with proof</h3>
-          <p>Every card is tested on a real machine every week. Backups are checked by restoring them, and moving to a new machine is built in. A record of who touched your data is next.<span class="soon">Coming</span></p>
+          <p>Every recipe is tested on real machines every week, with the results on show. Backups count only once they've been restored and checked.</p>
         </div>
       </div>
-    </div>
-  </section>
+      <p class="aside">"Isn't self-hosting for nerds?" <span>It was. Now your AI does the nerdy bits.</span></p>
 
-  <section aria-labelledby="ways-title">
-    <div class="wrap">
-      <p class="kicker">Three ways in</p>
-      <h2 id="ways-title">A home, a guest room, and a clean room.</h2>
-      <p class="intro">Some apps you keep for years. Some you need for a few weeks. Some jobs you want done and gone. Your data stays home every time.</p>
-      <div class="ways-scale" aria-hidden="true"><span>Years</span><span class="bar"></span><span>Minutes</span></div>
+      <div class="ways-head">
+        <h3>Three ways in</h3>
+        <p>Some apps you keep for years. Some you need for a few weeks. Some jobs you want done and gone. Your data stays home every time.</p>
+      </div>
       <div class="ways">
         <div class="way">
           <p class="stay">Stays for years</p>
-          <h3>The keeper</h3>
+          <h4>The keeper</h4>
           <p class="tag">A safe home</p>
-          <p>The apps you live with. Set up once, used every day, backed up, and easy to hand over when someone steps down.</p>
+          <p>The apps you live with. Set up once, used every day, and easy to hand over when someone steps down.</p>
           <p class="eg">The tennis club's court bookings, the family's photos, a firm's knowledge base.</p>
         </div>
         <div class="way">
           <p class="stay">Stays for weeks</p>
-          <h3>The guest</h3>
+          <h4>The guest</h4>
           <p class="tag">A guest room, with a check-out date</p>
           <p>Apps with a job to do and an end in sight. Run one for as long as it's needed, then keep what matters and clear out the rest.</p>
-          <p>Proof that nothing was left behind is on its way.<span class="soon">Coming</span></p>
           <p class="eg">Sign-ups for a weekend tournament, a wedding's shared photos, a data room for an audit.</p>
         </div>
         <div class="way">
           <p class="stay">Stays for minutes</p>
-          <h3>The job <span class="soon">Coming</span></h3>
+          <h4>The job</h4>
           <p class="tag">A clean room</p>
-          <p>One-off work over sensitive files, on your own machine. Data in, results out, and a report of everything it made, and everything it deleted.</p>
-          <p class="eg">Ask your AI to go through a folder of client files, and leave nothing behind.</p>
+          <p>Soon, one-off work over sensitive files, done on your own machine. Data in, results out, and nothing left behind.</p>
+          <p class="eg">Ask your AI to go through a folder of client files, and leave no trace.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="alt proof" aria-labelledby="proof-title">
+  <!-- 5. Where we're headed -->
+  <section class="headed" id="headed" aria-labelledby="headed-title">
     <div class="wrap">
-      <p class="kicker">Proof, not promises</p>
-      <h2 id="proof-title">Don't take our word for it.</h2>
-      <p class="intro">Everyone in AI makes claims. We'd rather show you.</p>
-      <div class="grid3">
-        <a class="evidence" href="https://cards.edgible.org">
-          <h3>Tested, with the results on show</h3>
-          <p>Every card is set up from scratch on a real machine every week, and again whenever it changes or Edgible releases a new version. Each card shows its latest result.</p>
-          <span class="go">See the results →</span>
-        </a>
-        <div class="evidence">
-          <h3>Backups proven by restoring them</h3>
-          <p>A backup only counts once it has been restored and checked against the original. Anything less is a hope, not a backup.</p>
+      <p class="kicker">Where we're headed</p>
+      <h2 id="headed-title">The safe place your agents put things.</h2>
+      <p class="intro">Before long you'll talk to any AI, and it will build and run things for you. When it needs somewhere to keep them, that place should be yours. That's what we're building.</p>
+      <div class="grid2">
+        <div class="future">
+          <h3>A home for your agents</h3>
+          <p>Your agents, the small apps they write, and everything they remember, running on machines you control and reachable wherever you are.</p>
         </div>
-        <div class="evidence">
-          <h3>AI, measured <span class="soon">Coming</span></h3>
-          <p>We test how well Claude, ChatGPT, Gemini and open models follow our recipes, scored the same way every week, and we'll publish the scores.</p>
+        <div class="future">
+          <h3>Agents that ask first</h3>
+          <p>No agent deletes, publishes or spends without your yes. Each one can do only its own job, and you can switch any of them off.</p>
+        </div>
+        <div class="future">
+          <h3>A record you can read</h3>
+          <p>Every week, a plain report: what ran, what changed, and which person or agent changed it. Clear enough for a committee, solid enough for a regulator.</p>
+        </div>
+        <div class="future">
+          <h3>Know where your data is</h3>
+          <p>One map of everything you own: which app holds it, which machine it's on, and when it was last proven safe. Easy to move, easy to leave.</p>
         </div>
       </div>
+      <p class="headline-close">Software is getting cheap. Trust isn't. <span>That's the part we're building.</span></p>
     </div>
   </section>
 
-  <section aria-labelledby="faq-title">
-    <div class="wrap faq">
-      <p class="kicker">Fair questions</p>
-      <h2 id="faq-title">You're probably wondering…</h2>
-      <details>
-        <summary>Isn't self-hosting for nerds?</summary>
-        <p>It was. Now your AI does the nerdy bits, following recipes that have been tested many times over.</p>
-      </details>
-      <details>
-        <summary>Isn't running apps at home insecure?</summary>
-        <p>Nothing opens your home network: the connection goes out, not in. Every app gets HTTPS and the right sign-in for who should reach it.</p>
-      </details>
-      <details>
-        <summary>What if my computer dies?</summary>
-        <p>Backups are checked by restoring them, and moving to a new machine is built in. That's the spare tyre.</p>
-      </details>
-      <details>
-        <summary>Can't my AI already set up apps for me?</summary>
-        <p>It can, once. We give it tested recipes, then keep things working for years. Setting up is day one; we're there for all the days after.</p>
-      </details>
-      <details>
-        <summary>Doesn't Cloudflare or Tailscale do this?</summary>
-        <p>They do the front door, and they're good at it. That's one part of three: they don't set up your apps, back them up or test them. If you only need a tunnel and you're technical, use theirs. We're for people who want the whole thing looked after.</p>
-      </details>
-      <details>
-        <summary>What if Edgible goes away?</summary>
-        <p>Your apps keep running. They're standard software on your own machine, and only the front door is ours.</p>
-      </details>
-    </div>
-  </section>
-
+  <!-- Closing call -->
   <section class="closing" aria-labelledby="close-title">
     <div class="wrap">
       <h2 id="close-title">Bring your data home.</h2>
       <p>Start with one app on a machine you already have. Your AI will take it from there.</p>
       <div class="ctas">
         <a class="btn primary" href="https://guides.edgible.com/guides/start-here/index.html">Get started</a>
-        <a class="btn secondary" href="https://cards.edgible.org">Browse the cards</a>
+        <a class="btn secondary" href="https://cards.edgible.org">See the tested recipes</a>
       </div>
     </div>
   </section>
