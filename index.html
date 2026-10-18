@@ -126,6 +126,15 @@
     .way p { margin: 0 0 12px; color: var(--muted); }
     .way .eg { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); font-size: 15px; }
 
+    /* Better together */
+    .loop { margin: 0 0 48px; }
+    .loop img { display: block; width: 100%; max-width: 1060px; height: auto; margin: 0 auto; }
+    .share-two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .share-two div { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 26px; }
+    .share-two h3 { margin: 0 0 8px; font-size: 21px; color: var(--heading); }
+    .share-two p { margin: 0; color: var(--muted); }
+    .together-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+
     /* 5. Where we're headed */
     .headed { background: radial-gradient(ellipse at 20% 0%, rgba(79,195,168,.12), transparent 55%), radial-gradient(ellipse at 90% 100%, rgba(255,210,31,.08), transparent 55%), var(--bg); }
     .headed .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -166,7 +175,7 @@
     footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 
     @media (max-width: 900px) {
-      .world .cols, .beliefs, .grid3, .ways, .headed .grid2, .stack-wrap, .timeline { grid-template-columns: 1fr; }
+      .world .cols, .beliefs, .grid3, .ways, .headed .grid2, .stack-wrap, .timeline, .share-two { grid-template-columns: 1fr; }
       .timeline li::after { display: none; }
       .story-ex { padding: 28px 22px; }
       .asks li { border-radius: 14px; }
@@ -323,6 +332,33 @@
           <p>Soon, one-off work over sensitive files, done on your own machine. Data in, results out, and nothing left behind.</p>
           <p class="eg">Ask your AI to go through a folder of client files, and leave no trace.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Better together -->
+  <section class="together" aria-labelledby="together-title">
+    <div class="wrap">
+      <p class="kicker">Better together</p>
+      <h2 id="together-title">Nobody should have to figure it out alone.</h2>
+      <p class="intro">Most people who run their own apps do it alone, and nobody ever sees how they did it. We're changing that. Every recipe is shared, so what works for one person works for the next, and for the next person's AI.</p>
+      <figure class="loop">
+        <img src="images/ai-loop.svg" width="1060" height="600"
+             alt="You have a need, and your AI suggests options from the shared recipes. Is there a recipe? If yes, it picks a tested recipe and it is running on your machine. If not, it builds a new one with you, it is tested and running, and you share it back, so the next person's AI finds it.">
+      </figure>
+      <div class="share-two">
+        <div>
+          <h3>Share what you run</h3>
+          <p>With the people around you: your club, your team, your family. You choose who gets in.</p>
+        </div>
+        <div>
+          <h3>Share how you run it</h3>
+          <p>With everyone. Every recipe shared back makes every AI better at helping the next person.</p>
+        </div>
+      </div>
+      <div class="ctas together-ctas">
+        <a class="btn secondary" href="https://cards.edgible.org">Browse the recipes</a>
+        <a class="btn secondary" href="https://github.com/edgible-org/cards/blob/main/CONTRIBUTING.md">Share yours</a>
       </div>
     </div>
   </section>
