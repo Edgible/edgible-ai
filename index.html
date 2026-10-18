@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edgible: Your data's coming home</title>
+  <meta name="description" content="Edgible runs your apps and AI on machines you control, set up by your own AI and kept safe, so you get the convenience without giving your data away.">
+  <meta property="og:title" content="Edgible: Your data's coming home">
+  <meta property="og:description" content="Run your apps and AI on machines you control. Your AI sets them up; Edgible keeps them safe.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1f3a5f;
+      --navy-deep: #16304f;
+      --yellow: #ffd21f;
+      --coral: #e85d3f;
+      --teal: #2f7d6d;
+      --mist: #eef2f6;
+      --line: #d5dde6;
+      --ink: #1a2433;
+      --muted: #5b6b80;
+      --white: #ffffff;
+      --radius: 14px;
+      --wrap: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--navy); }
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+
+    /* Top bar */
+    header.bar { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    header.bar .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; color: var(--navy); text-decoration: none; letter-spacing: -.01em; }
+    .logo .mark { width: 28px; height: 28px; border-radius: 8px; background: var(--yellow); position: relative; }
+    .logo .mark::before, .logo .mark::after { content: ""; position: absolute; top: 11px; width: 4px; height: 4px; border-radius: 50%; background: var(--ink); }
+    .logo .mark::before { left: 8px; } .logo .mark::after { right: 8px; }
+    nav.links { display: flex; gap: 24px; font-weight: 500; font-size: 15px; }
+    nav.links a { text-decoration: none; color: var(--muted); }
+    nav.links a:hover { color: var(--navy); }
+
+    /* Buttons */
+    .btn { display: inline-block; padding: 13px 22px; border-radius: 999px; font-weight: 600; font-size: 16px; text-decoration: none; transition: transform .15s ease, box-shadow .15s ease; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn.primary { background: var(--navy); color: var(--white); box-shadow: 0 6px 18px rgba(31,58,95,.25); }
+    .btn.secondary { background: var(--white); color: var(--navy); border: 2px solid var(--navy); }
+    .btn.on-dark { background: var(--yellow); color: var(--navy-deep); }
+    .btn.ghost-dark { color: var(--white); border: 2px solid rgba(255,255,255,.6); }
+
+    /* Hero */
+    .hero { background: var(--mist); padding: 72px 0 0; overflow: hidden; }
+    .hero .eyebrow { display: inline-block; font-weight: 600; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+    .hero h1 { font-size: clamp(40px, 7vw, 76px); line-height: 1.04; letter-spacing: -.03em; margin: 0 0 20px; color: var(--navy-deep); font-weight: 800; }
+    .hero h1 .tm { font-size: .3em; vertical-align: super; font-weight: 600; color: var(--muted); }
+    .hero p.lede { font-size: clamp(18px, 2.2vw, 22px); color: var(--muted); max-width: 640px; margin: 0 0 32px; }
+    .hero .ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
+    /* The art's floor starts 76% down; the band carries it to the page's edges on wide screens. */
+    .hero .art { display: block; width: 100%; background: linear-gradient(to bottom, var(--mist) 76%, #d5dde6 76%); }
+    .hero .art img { max-width: 1200px; margin: 0 auto; }
+    .hero .art img { display: block; width: 100%; height: auto; }
+
+    /* Sections */
+    section { padding: 88px 0; }
+    .kicker { font-weight: 600; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--coral); margin: 0 0 12px; }
+    h2 { font-size: clamp(30px, 4.2vw, 44px); line-height: 1.1; letter-spacing: -.02em; margin: 0 0 18px; color: var(--navy-deep); }
+    .intro { font-size: 19px; color: var(--muted); max-width: 720px; margin: 0 0 48px; }
+
+    /* The four messages */
+    .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .msg { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 24px; }
+    .msg .num { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: var(--yellow); color: var(--navy-deep); font-weight: 800; margin-bottom: 16px; }
+    .msg h3 { margin: 0 0 8px; font-size: 20px; color: var(--navy-deep); }
+    .msg p { margin: 0; color: var(--muted); }
+    .msg .quote { margin-top: 14px; font-weight: 600; color: var(--ink); }
+
+    /* Framing */
+    .framing { background: var(--navy-deep); color: #dbe4ef; }
+    .framing h2 { color: var(--white); }
+    .framing .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .framing p { font-size: 18px; margin: 0 0 18px; }
+    .framing strong { color: var(--yellow); font-weight: 600; }
+
+    /* How it works */
+    .how { background: var(--mist); }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .step { background: var(--white); border-radius: var(--radius); padding: 30px 26px; border-top: 5px solid var(--teal); }
+    .step:nth-child(2) { border-top-color: var(--yellow); }
+    .step:nth-child(3) { border-top-color: var(--coral); }
+    .step h3 { margin: 0 0 10px; font-size: 21px; color: var(--navy-deep); }
+    .step p { margin: 0; color: var(--muted); }
+    .soon { display: inline-block; margin-left: 6px; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; background: var(--mist); color: var(--teal); vertical-align: middle; }
+
+    /* Keeper and job */
+    .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .card { border: 1px solid var(--line); border-radius: var(--radius); padding: 32px 28px; }
+    .card h3 { margin: 0 0 6px; font-size: 22px; color: var(--navy-deep); }
+    .card .tag { font-weight: 600; color: var(--teal); margin: 0 0 14px; }
+    .card p { margin: 0 0 12px; color: var(--muted); }
+
+    /* In data we trust */
+    .trust { text-align: center; }
+    .trust blockquote { margin: 0 auto 28px; max-width: 760px; font-size: clamp(22px, 3vw, 30px); line-height: 1.35; font-weight: 600; color: var(--navy-deep); }
+    .trust cite { display: block; margin-top: 12px; font-size: 16px; font-style: normal; font-weight: 500; color: var(--muted); }
+    .trust .two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 880px; margin: 0 auto; text-align: left; }
+    .trust .two div { background: var(--mist); border-radius: var(--radius); padding: 26px 24px; }
+    .trust .two h3 { margin: 0 0 8px; color: var(--navy-deep); font-size: 19px; }
+    .trust .two p { margin: 0; color: var(--muted); }
+
+    /* Questions */
+    .faq { max-width: 820px; }
+    details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+    summary { cursor: pointer; font-weight: 600; font-size: 18px; color: var(--navy-deep); list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; font-weight: 400; font-size: 24px; line-height: 1; color: var(--muted); }
+    details[open] summary::after { content: "–"; }
+    details p { margin: 12px 0 0; color: var(--muted); }
+
+    /* Closing call */
+    .closing { background: var(--navy); color: var(--white); text-align: center; }
+    .closing h2 { color: var(--white); }
+    .closing p { color: #dbe4ef; font-size: 19px; max-width: 620px; margin: 0 auto 32px; }
+    .closing .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    footer { padding: 32px 0; font-size: 14px; color: var(--muted); }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+    @media (max-width: 900px) {
+      .grid4 { grid-template-columns: 1fr 1fr; }
+      .grid3, .pair, .framing .cols, .trust .two { grid-template-columns: 1fr; }
+      .framing .cols { gap: 8px; }
+    }
+    @media (max-width: 560px) {
+      .wrap { padding: 0 16px; }
+      nav.links { gap: 16px; font-size: 14px; }
+      nav.links .hide-sm { display: none; }
+      .grid4 { grid-template-columns: 1fr; }
+      section { padding: 64px 0; }
+      .hero { padding-top: 48px; }
+      .btn { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="#"><span class="mark" aria-hidden="true"></span>Edgible</a>
+    <nav class="links">
+      <a href="#how">How it works</a>
+      <a class="hide-sm" href="https://cards.edgible.org">Cards</a>
+      <a href="https://guides.edgible.com/guides/start-here/index.html">Get started</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <span class="eyebrow">The confidence to keep your data close</span>
+      <h1 id="hero-title">Your data's coming home.<span class="tm">™</span></h1>
+      <p class="lede">Your AI runs your apps on your own machines, and Edgible keeps them safe. All the convenience, without giving your data away.</p>
+      <div class="ctas">
+        <a class="btn primary" href="https://guides.edgible.com/guides/start-here/index.html">Get started</a>
+        <a class="btn secondary" href="https://cards.edgible.org">Browse the cards</a>
+      </div>
+    </div>
+    <div class="art">
+      <img src="images/arrivals-gate.svg" width="1200" height="500"
+           alt="An airport arrivals hall. A small, smiling yellow block carrying a suitcase walks out of the gate towards a person with open arms and a child holding a HOME sign. The arrivals board reads: From the cloud, landed. Your data, home.">
+    </div>
+  </section>
+
+  <section aria-labelledby="why-title">
+    <div class="wrap">
+      <p class="kicker">Why Edgible</p>
+      <h2 id="why-title">It's your data. Keep it.</h2>
+      <p class="intro">Models will change. Agents will change. Platforms will come and go. Your members' details, your clients' files and your family's photos last for decades, and every new AI makes them worth more.</p>
+      <div class="grid4">
+        <div class="msg">
+          <span class="num">1</span>
+          <h3>Your data is the value</h3>
+          <p>Whoever holds your data holds the value. It should be you.</p>
+          <p class="quote">"Your data is the most valuable thing you own. Keep it."</p>
+        </div>
+        <div class="msg">
+          <span class="num">2</span>
+          <h3>Provably yours</h3>
+          <p>Not a promise: evidence. Where it lives, that it's intact, and that you can move it.</p>
+          <p class="quote">"Know where it is, and that it's safe."</p>
+        </div>
+        <div class="msg">
+          <span class="num">3</span>
+          <h3>On your own machines</h3>
+          <p>A computer at home or in the office, or a small cloud server in your own account.</p>
+          <p class="quote">"It lives on your machines, not someone else's cloud."</p>
+        </div>
+        <div class="msg">
+          <span class="num">4</span>
+          <h3>Your AI does the work</h3>
+          <p>No servers to learn. Ask the AI you already use, and it sets things up properly.</p>
+          <p class="quote">"Ask your AI. Edgible does the rest."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="framing" aria-labelledby="age-title">
+    <div class="wrap cols">
+      <div>
+        <p class="kicker">The agent age</p>
+        <h2 id="age-title">AI is about to know everything about us.</h2>
+      </div>
+      <div>
+        <p>Soon each of us will have agents working on our behalf, booking, writing, remembering and deciding. They only work well when they know us: our files, our habits, our clients, our children.</p>
+        <p>The easy place to run all of that is a big platform's cloud, and the price is quiet but enormous: <strong>every agent's memory, every app's records and every question we ask becomes data held, and often used, by someone else.</strong></p>
+        <p>Edgible lets your apps and agents run where your data lives, on machines you control. You shouldn't have to choose between capable AI and control of your own life.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <p class="kicker">How it works</p>
+      <h2 id="how-title">Three parts, so you never think about servers.</h2>
+      <p class="intro">At home, in the office or on a small cloud server, it works the same way.</p>
+      <div class="grid3">
+        <div class="step">
+          <h3>A safe front door</h3>
+          <p>A small agent on your machine connects out to Edgible, so each app gets its own web address, HTTPS and sign-in. Nothing opens your home network, and your own domain needs just one DNS record.</p>
+        </div>
+        <div class="step">
+          <h3>Recipes your AI can follow</h3>
+          <p>Tested cards for apps you'd otherwise rent: bookmarks, photos, passwords, analytics, private AI and more. A skill teaches your AI to choose one with you and set it up properly.</p>
+        </div>
+        <div class="step">
+          <h3>Looked after, with proof</h3>
+          <p>Every card is tested every night on real machines. Backups are checked by restoring them, and moving to a new machine is built in. A record of who touched your data is next.<span class="soon">Coming</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="ways-title">
+    <div class="wrap">
+      <p class="kicker">Two ways in</p>
+      <h2 id="ways-title">A safe home, and a safe room.</h2>
+      <p class="intro">Some things you keep for years. Some jobs you want done and gone. Your data stays home either way.</p>
+      <div class="pair">
+        <div class="card">
+          <h3>The keeper</h3>
+          <p class="tag">A safe home for the apps you keep</p>
+          <p>The tennis club's court bookings, a firm's knowledge base, the family's photos. Set up once, used for years, backed up and easy to hand over when someone steps down.</p>
+        </div>
+        <div class="card">
+          <h3>The job <span class="soon">Coming</span></h3>
+          <p class="tag">A safe room for one-off work</p>
+          <p>Ask your AI to go through a folder of client files on your own machine, then see a report of everything it created, and everything it deleted. Data in, results out, nothing left behind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust" aria-labelledby="trust-title">
+    <div class="wrap">
+      <p class="kicker">Our conviction</p>
+      <h2 id="trust-title">In data we trust.</h2>
+      <blockquote>"In God we trust; all others must bring data."<cite>W. Edwards Deming</cite></blockquote>
+      <div class="two">
+        <div>
+          <h3>Your data is the value</h3>
+          <p>Models, agents and platforms will keep changing. Whoever holds the data holds the value, so it should be you.</p>
+        </div>
+        <div>
+          <h3>Data is the proof</h3>
+          <p>Everyone in AI makes claims. We'd rather bring data: backups proven by restoring them, apps tested every night, and how well each AI really works with our tools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="faq-title" style="padding-top:24px">
+    <div class="wrap faq">
+      <p class="kicker">Fair questions</p>
+      <h2 id="faq-title">You're probably wondering…</h2>
+      <details>
+        <summary>Isn't self-hosting for nerds?</summary>
+        <p>It was. Now your AI does the nerdy bits, following recipes that have been tested many times over.</p>
+      </details>
+      <details>
+        <summary>Isn't running apps at home insecure?</summary>
+        <p>Nothing opens your home network: the connection goes out, not in. Every app gets HTTPS and the right sign-in for who should reach it.</p>
+      </details>
+      <details>
+        <summary>What if my computer dies?</summary>
+        <p>Backups are checked by restoring them, and moving to a new machine is built in. That's the spare tyre.</p>
+      </details>
+      <details>
+        <summary>Can't my AI already set up apps for me?</summary>
+        <p>It can, once. We give it tested recipes, then keep things working for years. Setting up is day one; we're there for all the days after.</p>
+      </details>
+      <details>
+        <summary>Doesn't Cloudflare or Tailscale do this?</summary>
+        <p>They do the front door, and they're good at it. That's one part of three: they don't set up your apps, back them up or test them. If you only need a tunnel and you're technical, use theirs. We're for people who want the whole thing looked after.</p>
+      </details>
+      <details>
+        <summary>What if Edgible goes away?</summary>
+        <p>Your apps keep running. They're standard software on your own machine, and only the front door is ours.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="closing" aria-labelledby="close-title">
+    <div class="wrap">
+      <h2 id="close-title">Bring your data home.</h2>
+      <p>Start with one app on a machine you already have. Your AI will take it from there.</p>
+      <div class="ctas">
+        <a class="btn on-dark" href="https://guides.edgible.com/guides/start-here/index.html">Get started</a>
+        <a class="btn ghost-dark" href="https://cards.edgible.org">Browse the cards</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Edgible. "Your data's coming home" is a trade mark of Edgible.</span>
+    <span><a href="https://cards.edgible.org">Cards</a> · <a href="https://guides.edgible.com">Guides</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
