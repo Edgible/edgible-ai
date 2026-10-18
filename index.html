@@ -65,7 +65,7 @@
     .hero .eyebrow { display: inline-block; font-weight: 600; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
     .hero h1 { font-size: clamp(44px, 7.4vw, 84px); line-height: 1.02; letter-spacing: -.02em; margin: 0 0 22px; color: var(--heading); font-weight: 700; }
     .hero h1 .tm { font-size: .28em; vertical-align: super; font-weight: 500; color: var(--muted); margin-left: 2px; }
-    .hero p.lede { font-size: clamp(19px, 2.3vw, 23px); color: var(--muted); max-width: 640px; margin: 0 0 34px; }
+    .hero p.lede { font-size: clamp(19px, 2.2vw, 22px); color: var(--muted); max-width: 720px; margin: 0 0 34px; }
     .hero .ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
     /* The art's floor starts 76% down; the band carries it to the page's edges on wide screens. */
     .hero .art { display: block; width: 100%; background: linear-gradient(to bottom, transparent 75.6%, var(--blue-mid) 75.6%, var(--blue-mid) 76.4%, #07073f 76.4%); }
@@ -98,6 +98,21 @@
     .step h3 { margin: 0 0 10px; font-size: 22px; color: var(--heading); }
     .step p { margin: 0; color: var(--muted); }
     .step .ask { margin-top: 14px; padding-left: 14px; border-left: 3px solid var(--yellow); color: var(--ink); font-style: italic; }
+    .ex-label { font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 0 0 18px; }
+    .story-ex { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 36px 36px 30px; }
+    .timeline { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; counter-reset: step; }
+    .timeline li { position: relative; padding-top: 44px; counter-increment: step; }
+    .timeline li::before { content: counter(step); position: absolute; top: 0; left: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--yellow); color: var(--bg); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .timeline li::after { content: ""; position: absolute; top: 15px; left: 40px; right: -18px; height: 2px; background: var(--line); }
+    .timeline li:last-child::after { display: none; }
+    .timeline .who { display: block; font-size: 19px; font-weight: 600; color: var(--heading); margin-bottom: 8px; line-height: 1.3; }
+    .timeline p { margin: 0; color: var(--muted); font-size: 16px; }
+    .timeline .ask { padding-left: 12px; border-left: 3px solid var(--yellow); color: var(--ink); font-style: italic; }
+    .result { margin: 30px 0 0; padding-top: 22px; border-top: 1px solid var(--line); font-size: 22px; font-weight: 600; color: var(--heading); }
+    .result span { color: var(--yellow); }
+    .asks { margin-top: 40px; }
+    .asks ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 12px; }
+    .asks li { padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); font-size: 15px; font-style: italic; background: rgba(10,10,76,.6); }
     .aside { margin: 56px auto 0; max-width: 760px; text-align: center; font-size: clamp(22px, 2.8vw, 28px); line-height: 1.4; color: var(--heading); font-weight: 500; }
     .aside span { color: var(--yellow); }
     .ways-head { margin: 88px 0 28px; }
@@ -151,7 +166,10 @@
     footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 
     @media (max-width: 900px) {
-      .world .cols, .beliefs, .grid3, .ways, .headed .grid2, .stack-wrap { grid-template-columns: 1fr; }
+      .world .cols, .beliefs, .grid3, .ways, .headed .grid2, .stack-wrap, .timeline { grid-template-columns: 1fr; }
+      .timeline li::after { display: none; }
+      .story-ex { padding: 28px 22px; }
+      .asks li { border-radius: 14px; }
       .stack li { grid-template-columns: 1fr; gap: 4px; }
       .world .cols { gap: 8px; }
       .beliefs { gap: 28px; }
@@ -184,9 +202,9 @@
   <!-- 1. Hero -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap">
-      <span class="eyebrow">The confidence to keep your data close</span>
+      <span class="eyebrow">For small businesses, clubs and families</span>
       <h1 id="hero-title">Your data's coming home.<span class="tm">™</span></h1>
-      <p class="lede">Your AI runs your apps on your own machines, and Edgible keeps them safe. All the convenience, without giving your data away.</p>
+      <p class="lede">Edgible lets your AI set up the apps and agents you rely on, on computers you control: at home, in the office, or a small server of your own. Then we keep them reachable, backed up and provably safe. All the convenience of the cloud, without giving your data away.</p>
       <div class="ctas">
         <a class="btn primary" href="https://guides.edgible.com/guides/start-here/index.html">Get started</a>
         <a class="btn secondary" href="#headed">Where we're headed</a>
@@ -219,7 +237,7 @@
     <div class="wrap">
       <p class="kicker">Why it matters</p>
       <h2 id="why-title">It's your data. Keep it.</h2>
-      <p class="intro">Models will change. Agents will change. Platforms will come and go. What lasts is the data: your members, your clients, your family's photos. And every new AI makes it worth more.</p>
+      <p class="intro">Models will change. Agents will change. Platforms will come and go. What lasts is the data: your members, your clients, your family's photos. And every new AI makes it worth more. Edgible exists to give you the confidence to keep it close.</p>
       <div class="beliefs">
         <div class="belief">
           <h3>Your data is the value</h3>
@@ -242,21 +260,39 @@
     <div class="wrap">
       <p class="kicker">What we do today</p>
       <h2 id="today-title">Your AI sets it up. We keep it safe.</h2>
-      <p class="intro">You don't need to know about servers. You need to say what you want.</p>
-      <div class="grid3">
-        <div class="step">
-          <h3>Ask in your own words</h3>
-          <p>Tell the agent what you need. It picks from recipes we've tested, or helps you find a new one.</p>
-          <p class="ask">"It costs me $40 a month to host my small website. Is there a better way?"</p>
-        </div>
-        <div class="step">
-          <h3>Safe, and reachable anywhere</h3>
-          <p>Each app gets its own web address and a padlock, so it works from your phone wherever you are, and nobody gets into your home network.</p>
-        </div>
-        <div class="step">
-          <h3>Looked after, with proof</h3>
-          <p>Every recipe is tested on real machines every week, with the results on show. Backups count only once they've been restored and checked.</p>
-        </div>
+      <p class="intro">You don't need to know about servers. You say what you want, in your own words, to the AI you already use.</p>
+      <div class="story-ex">
+        <p class="ex-label">One example, start to finish</p>
+        <ol class="timeline">
+          <li>
+            <span class="who">You ask</span>
+            <p class="ask">"It costs us $40 a month to host our small website. Is there a better way?"</p>
+          </li>
+          <li>
+            <span class="who">Your agent asks first</span>
+            <p>Is it a few simple pages, or something you edit every week? Then it lays out two or three honest options, including free hosting if that really is better, and recommends one. It picks from recipes we've tested, or helps you find a new one.</p>
+          </li>
+          <li>
+            <span class="who">It sets it up on a machine you control</span>
+            <p>A computer you already have, or a small server of your own for a few dollars a month. Your site gets your own address and a padlock, the editor sits behind your sign-in, and nobody gets into your network.</p>
+          </li>
+          <li>
+            <span class="who">Edgible looks after it</span>
+            <p>The recipe is tested on real machines every week. Backups count only once they've been restored and checked. If you change machines, your site moves with you.</p>
+          </li>
+        </ol>
+        <p class="result">Same website. A fraction of the cost. <span>And it's yours.</span></p>
+      </div>
+
+      <div class="asks">
+        <p class="ex-label">Other things people ask</p>
+        <ul>
+          <li>"We want our family photos off Google, but still easy to share with Grandma."</li>
+          <li>"Our team wants an AI that answers questions from our own documents, without sending them anywhere."</li>
+          <li>"Our club needs online court bookings that members can use from their phones."</li>
+          <li>"I'd like one place for the family's passwords that we control."</li>
+          <li>"We pay for website analytics. Could we run our own?"</li>
+        </ul>
       </div>
       <p class="aside">"Isn't self-hosting for nerds?" <span>It was. Now your AI does the nerdy bits.</span></p>
 
