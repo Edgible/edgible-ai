@@ -6,6 +6,7 @@
   <title>Edgible: Your data's coming home</title>
   <meta name="description" content="AI agents are about to run much of our lives, and they only work when they know us. Edgible keeps the data they need on machines you control, looked after and provably safe.">
   <meta name="theme-color" content="#111827">
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <meta property="og:title" content="Edgible: Your data's coming home">
   <meta property="og:description" content="AI agents only work when they know us. Edgible keeps that data on machines you control, looked after and provably safe.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,10 +49,8 @@
     /* Top bar */
     header.bar { position: sticky; top: 0; z-index: 10; background: rgba(17,24,39,.72); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
     header.bar .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 22px; color: var(--heading); text-decoration: none; letter-spacing: -.01em; }
-    .logo .mark { width: 28px; height: 28px; border-radius: 8px; background: var(--yellow); position: relative; }
-    .logo .mark::before, .logo .mark::after { content: ""; position: absolute; top: 11px; width: 4px; height: 4px; border-radius: 50%; background: var(--bg); }
-    .logo .mark::before { left: 8px; } .logo .mark::after { right: 8px; }
+    .logo { display: flex; align-items: center; }
+    .logo img { display: block; height: 24px; width: auto; }
     nav.links { display: flex; gap: 24px; font-weight: 500; font-size: 16px; }
     nav.links a { text-decoration: none; color: var(--muted); }
     nav.links a:hover { color: var(--heading); }
@@ -240,7 +239,7 @@
 
 <header class="bar">
   <div class="wrap">
-    <a class="logo" href="#"><span class="mark" aria-hidden="true"></span>Edgible</a>
+    <a class="logo" href="#"><img src="images/edgible-logo-white.png" alt="Edgible" width="107" height="24"></a>
     <nav class="links">
       <a class="hide-sm" href="#today">What we do</a>
       <a href="#headed">Where we're headed</a>
