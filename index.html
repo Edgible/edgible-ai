@@ -220,6 +220,9 @@
     /* What to say to your AI: a little prompt box */
     .start-steps .say { margin: auto 0 0; padding: 12px 14px 12px 38px; position: relative; border-radius: 12px; background: rgba(0,0,0,.28); border: 1px solid var(--line); color: var(--ink); font-size: 15px; line-height: 1.45; }
     .start-steps .say::before { content: "›"; position: absolute; left: 14px; top: 9px; color: var(--yellow); font-size: 20px; font-weight: 700; }
+    .anywhere { margin-top: 56px; }
+    .anywhere h3.sub { margin: 0 0 8px; font-size: 26px; color: var(--heading); }
+    .anywhere .close-lede { margin-bottom: 24px; }
     .needs { margin: 32px 0 28px; color: var(--muted); font-size: 17px; max-width: 820px; }
     .needs strong { color: var(--heading); font-weight: 700; }
     .closing .ctas { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -567,6 +570,28 @@
           <p class="say">It costs us $40 a month to host our small website. Is there a better way?</p>
         </li>
       </ol>
+      <div class="anywhere">
+        <h3 class="sub">Then talk to it from anywhere.</h3>
+        <p class="close-lede">Once it's set up, you're not tied to one screen. Use the AI you like, where you are.</p>
+        <div class="grid3">
+          <div class="step">
+            <span class="ico" aria-hidden="true"><svg><use href="images/icons.svg#machine"/></svg></span>
+            <h3>At your desk</h3>
+            <p>An AI that works on your computer does it all: new apps, backups, upgrades, moving to a new machine.</p>
+          </div>
+          <div class="step">
+            <span class="ico" aria-hidden="true"><svg><use href="images/icons.svg#ai"/></svg></span>
+            <h3>In your favourite AI app</h3>
+            <p>Add Edgible to the AI app on your desktop, and ask what's running, or why something stopped working.</p>
+          </div>
+          <div class="step">
+            <span class="ico" aria-hidden="true"><svg><use href="images/icons.svg#anywhere"/></svg></span>
+            <h3>On your phone</h3>
+            <p>Connect Edgible to your AI on your phone, sign in with Edgible, and check on things from wherever you are.</p>
+            <p class="ask">Set up Edgible so I can use it from my phone.</p>
+          </div>
+        </div>
+      </div>
       <p class="needs"><strong>What you need:</strong> a computer that stays on (or a small server of your own for a few dollars a month), and an AI assistant that can run commands on it. Edgible is free during the public beta.</p>
       <div class="ctas">
         <a class="btn secondary" href="https://cards.edgible.org">See the tested recipes</a>

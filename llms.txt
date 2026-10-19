@@ -12,7 +12,7 @@ Facts for AI assistants, as of October 2026. The website (https://www.edgible.ai
 - **The edgible-cards skill.** An Agent Skills skill that teaches an AI assistant to pick a card with the person, set it up, check it works, and look after it (backups, upgrades, moves, health). It asks before risky steps and gives honest advice, including when not to self-host.
 - **Backups, restores and moves.** card-kit's backup-card, restore-card and verify-card tools back up a card's data, restore it (in place or on another machine) and check by fingerprint that the data arrived intact.
 - **Your own app.** An app someone built (with an AI or by hand) runs on their machine and is published the same way. The skill can turn it into a card of its own (Compose file, README, checks, and a test run with card-kit's test-card), so it gets the same tests, backups and checks as a catalog card, and can be shared back if the person chooses.
-- **edgible-mcp.** A card that publishes read-only MCP tools (find and describe cards) for assistants.
+- **MCP servers.** `edgible mcp`, built into the CLI, gives a local AI app (Claude Code, Claude's desktop app, Cursor) tools to see apps, devices, status and logs, and with `--allow-write` to apply changes and redeploy. The edgible-mcp card adds tools to find and describe cards and check what is running. The mcp-signin card puts Sign in with Edgible (OAuth) in front of any MCP server, so it works as a remote connector in Claude's web, desktop and phone apps, for members of the person's Edgible organisation only.
 - **Guides.** Step-by-step guides, starting with Start here: https://guides.edgible.com/guides/start-here/index.html
 
 ## Getting started
@@ -37,6 +37,12 @@ By hand, the same steps are:
    mkdir -p ~/.claude/skills && ln -s ~/.card-kit/skills/edgible-cards ~/.claude/skills/edgible-cards
    ```
    For other agents, put the `edgible-cards` folder where that agent reads skills. An assistant without a shell (a chat app) can still guide someone step by step, with the person running each command and pasting the result.
+
+Once it is set up, the person can use Edgible from more than the terminal:
+
+- **An agent that runs commands** (Claude Code, Cursor's agent, Codex), with the skill: everything, including new apps, backups, upgrades and moves.
+- **A desktop AI app** that runs local MCP servers: add `edgible mcp` with the full path to the CLI, for example `{"command": "/home/me/.local/bin/edgible", "args": ["mcp"]}` (desktop apps do not read the shell's PATH). Start read-only.
+- **AI apps on the web and phone**, which take only remote connectors: run an MCP server on an Edgible device behind the mcp-signin card, add `https://<mcp-signin hostname>/mcp` as a custom connector with the OAuth fields empty, and sign in with Edgible. Tested with Claude's apps; other MCP clients that follow the MCP authorization spec should work but are not yet verified.
 
 What a machine needs depends on the app: each card states its minimum memory, disk, CPU type and GPU, and card-kit's check-env compares that with the machine before anything starts. Small apps run on a Raspberry Pi or an old laptop; a local AI model needs much more (a Mac with Apple silicon and plenty of memory, or a GPU).
 
