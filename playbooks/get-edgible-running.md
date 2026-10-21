@@ -19,7 +19,9 @@ Done this already? Skip to your playbook.
 
 ## 1. Open Claude Code
 
-In the Claude desktop app, switch to **Code**, and choose a folder for it to work in: a new, empty one is fine.
+On your own computer, in the Claude desktop app, switch to **Code**, and choose a folder for it to work in: a new, empty one is fine.
+
+Edgible going on a virtual machine or a server? Claude Code still runs here, on your own computer, and reaches the other machine from here. If you just made a virtual machine with it, carry on in the same session.
 
 Claude Code is the part of Claude that can work on your computer. It always asks before it changes anything.
 
