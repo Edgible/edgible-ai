@@ -47,6 +47,8 @@ For a virtual machine or a server, name it instead, as [Getting a machine](../ge
 
 > Is Edgible running on this computer?
 
+For a virtual machine or a server, name it here too, such as *"Is Edgible running on the edgible-vm?"*: your own computer may run Edgible as well, and then "this computer" means yours.
+
 It should say the computer is **online**. You can also see it, by the name you gave it, in your [Edgible console](https://app.prod.edgible.com/).
 
 ## What you've just done

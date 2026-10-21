@@ -33,6 +33,10 @@ It takes a few minutes. Then, in [Get Edgible running](../get-edgible-running/),
 
 > Set up Edgible on the Multipass virtual machine named edgible-vm, so I can run my own apps there.
 
+And in step 4:
+
+> Is Edgible running on the edgible-vm?
+
 The virtual machine runs while your computer is on and awake. For anything other people rely on, choose a spare computer or a cloud server instead.
 
 **What you've just done:** you have a whole Ubuntu server, free, running inside your own computer, without changing anything on your computer itself. Not sure about it? Say *"Delete the edgible-vm"*, and it's gone. Like it? When other people come to rely on your apps, your AI can move them to a machine that stays on, data and all.
@@ -46,6 +50,8 @@ A server you rent by the month, from Hetzner, DigitalOcean or AWS Lightsail for 
 Then, in [Get Edgible running](../get-edgible-running/), say this in place of step 3, with your server's address:
 
 > Set up Edgible on my server, which I reach with ssh root@203.0.113.10, so I can run my own apps there.
+
+And in step 4, *"Is Edgible running on my server?"*
 
 ## A spare computer
 
