@@ -12,7 +12,6 @@ Start here:
 - **[Get Edgible running](get-edgible-running/):** the first chapter of every playbook.
 - **[Getting a machine](getting-a-machine/):** no spare computer? A virtual machine on yours, or a small cloud server.
 
-Coming soon:
+Being written now:
 
-- **Stop guessing what AI costs you:** one AI gateway, every agent capped, the real dollars on your phone.
-- **Your own AI agent, from your phone.**
+- **[Your own AI agent, from anywhere](your-own-ai-agent/):** your own agent on your machine, used from your phone, safely and with its costs under control. Its [AI gateway](your-ai-gateway/) chapter puts the cost guardrails in first.
