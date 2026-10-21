@@ -21,7 +21,7 @@ Each chapter builds on the one before, and each leaves you with something that w
 | | Chapter | You end up with |
 | --- | --- | --- |
 | 1 | [Get Edgible running](../get-edgible-running/) | A machine of yours, reachable from anywhere |
-| 2 | Connect Claude to your Edgible | Claude on your phone and desktop can see and change your apps, and store keys safely |
+| 2 | [Connect Claude to your Edgible](../connect-claude/) | Claude on your phone and desktop can see and change your apps, and store keys safely |
 | 3 | [Your AI gateway](../your-ai-gateway/) | Cost guardrails: one place for your AI keys, a budget per agent, the spending in dollars |
 | 4 | Your agent | Your own AI agent, on your machine, using the gateway |
 | 5 | Run it from your phone | Talk to your agent, check on it, and see what it costs, wherever you are |
