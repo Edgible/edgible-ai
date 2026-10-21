@@ -90,3 +90,7 @@ Free during the public beta, with no credit card. Beta limits: up to 10 devices,
 - Guides: https://guides.edgible.com
 - Using cards with an AI assistant: https://cards.edgible.org/ai/
 - Support: support@edgible.com · Sales: sales@edgible.com
+
+## Contact
+
+stefano@edgible.com
