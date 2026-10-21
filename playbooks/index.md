@@ -10,6 +10,7 @@ Each playbook takes you from nothing to something working, one short chapter at 
 Start here:
 
 - **[Get Edgible running](get-edgible-running/):** the first chapter of every playbook.
+- **[Getting a machine](getting-a-machine/):** no spare computer? A virtual machine on yours, or a small cloud server.
 
 Coming soon:
 

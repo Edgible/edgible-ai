@@ -13,8 +13,8 @@ Done this already? Skip to your playbook.
 
 > **What you need**
 >
-> - **A computer that stays on:** a Mac, or a PC or small server running Linux, such as Ubuntu. A spare one is ideal. On Windows, Edgible runs in a Linux virtual machine. No suitable computer? A chapter on getting one, such as a small cloud server for a few dollars a month, is coming soon.
-> - **Claude Code,** in the Claude desktop app, on that computer. It comes with Claude's paid plans. Other assistants that read skills, such as Codex, work too.
+> - **A computer that stays on:** a Mac, or a PC or small server running Linux, such as Ubuntu. A spare one is ideal. On Windows, Edgible runs in a Linux virtual machine. No suitable computer? See [Getting a machine](../getting-a-machine/): a virtual machine on your own computer, or a small cloud server.
+> - **Claude Code,** in the Claude desktop app on your own Mac or Windows computer. It comes with Claude's paid plans. If Edgible is going on another machine, such as a virtual machine or a cloud server, Claude Code sets it up from yours. Other assistants that read skills, such as Codex, work too.
 > - **An Edgible account.** It's free during the public beta, and your AI will help you make one.
 
 ## 1. Open Claude Code
@@ -33,7 +33,7 @@ The skill is Edgible's recipe book for AI assistants: how to set Edgible up, our
 
 > Set up Edgible on this computer so I can run my own apps.
 
-It checks your computer first, then takes you through the rest. Along the way:
+For a virtual machine or a server, name it instead, as [Getting a machine](../getting-a-machine/) shows. It checks the computer first, then takes you through the rest. Along the way:
 
 - **Your account.** If you don't have one yet, it sends you to [edgible.com](https://www.edgible.com) to sign up and create an organisation, the name your apps live under. It never asks for your password.
 - **The Edgible software.** It says what it will install, and asks before it does. Your computer may ask for its own password.
