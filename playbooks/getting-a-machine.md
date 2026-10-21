@@ -39,8 +39,6 @@ And in step 4:
 
 The virtual machine runs while your computer is on and awake. For anything other people rely on, choose a spare computer or a cloud server instead.
 
-**What you've just done:** you have a whole Ubuntu server, free, running inside your own computer, without changing anything on your computer itself. Not sure about it? Say *"Delete the edgible-vm"*, and it's gone. Like it? When other people come to rely on your apps, your AI can move them to a machine that stays on, data and all.
-
 ## A small cloud server
 
 A server you rent by the month, from Hetzner, DigitalOcean or AWS Lightsail for example. You make the account and pay; your AI walks you through the rest:
@@ -60,3 +58,11 @@ An old laptop or desktop works well. A Mac can run Edgible as it is: just set it
 > Help me put Ubuntu 26.04 on my old PC, so it can run Edgible all the time. I have a USB stick.
 
 Then follow [Get Edgible running](../get-edgible-running/) on that computer, or from your own, as above.
+
+## What you've just done
+
+You have a machine for Edgible, without buying anything you didn't need, and your AI did the fiddly parts.
+
+- **A virtual machine** is a whole Ubuntu server, free, inside your own computer, and nothing on your computer itself changed. Not sure about it? Say *"Delete the edgible-vm"*, and it's gone.
+- **A cloud server or a spare computer** stays on, so it's ready for apps other people rely on.
+- **Either way, you can change your mind.** Start in a virtual machine, and when other people come to rely on your apps, your AI can move them to a machine that stays on, data and all.
