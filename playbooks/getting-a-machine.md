@@ -35,6 +35,8 @@ It takes a few minutes. Then, in [Get Edgible running](../get-edgible-running/),
 
 The virtual machine runs while your computer is on and awake. For anything other people rely on, choose a spare computer or a cloud server instead.
 
+**What you've just done:** you have a whole Ubuntu server, free, running inside your own computer, without changing anything on your computer itself. Not sure about it? Say *"Delete the edgible-vm"*, and it's gone. Like it? When other people come to rely on your apps, your AI can move them to a machine that stays on, data and all.
+
 ## A small cloud server
 
 A server you rent by the month, from Hetzner, DigitalOcean or AWS Lightsail for example. You make the account and pay; your AI walks you through the rest:

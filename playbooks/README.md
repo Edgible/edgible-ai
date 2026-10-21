@@ -16,6 +16,7 @@ How a chapter reads:
 - **Prompts and links, not commands.** The reader tells their AI what they want; any command goes under a "Prefer to do it by hand?" section at the end, in a `<details>` block.
 - **Keys through the key link,** never pasted into a chat or a command.
 - **Plain words** for people who are comfortable with technology but not technical.
+- **Ends with what you've just done:** a few lines on what the reader now has and why it matters, in plain words: honest, warm, never hype. It's the part that makes the effort feel worth it.
 - **Tested.** Every prompt in a chapter has been run, and the AI regression checks that assistants follow it.
 
 `index.md` is the list of playbooks; this README is not published.
