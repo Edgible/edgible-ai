@@ -49,6 +49,16 @@ For a virtual machine or a server, name it instead, as [Getting a machine](../ge
 
 It should say the computer is **online**. You can also see it, by the name you gave it, in your [Edgible console](https://app.prod.edgible.com/).
 
+## What you've just done
+
+Your computer is now an Edgible device. That sounds small, and it isn't:
+
+- **It's reachable from anywhere, safely.** Apps on it can get their own web address, with HTTPS and sign-in, and you didn't open a single port on your router or touch your internet settings. Edgible's agent connects out, so nothing on your network is exposed.
+- **Your AI can look after it.** It knows how to put apps there and keep them going: checks, backups, upgrades, moving to another machine.
+- **It's yours.** Your machine, your data. Nothing is held in someone else's cloud, and nothing is held hostage if you leave.
+
+Not long ago this took an afternoon with a networking guide: domain names, certificates, firewall rules. You did it in about fifteen minutes, in plain sentences.
+
 ## What's next
 
 Edgible is running, and your AI knows how to use it. Go back to your playbook, or simply say what you need:
