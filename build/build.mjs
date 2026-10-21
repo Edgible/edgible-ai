@@ -1,0 +1,45 @@
+// Builds www.edgible.ai into dist/: the page in site/ as it is, and each playbook in playbooks/
+// (one Markdown file per chapter) as a page in the site's look, with its Markdown source beside it
+// for AI assistants. Run with: npm run build
+import { cpSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { marked } from 'marked';
+
+const root = join(dirname(fileURLToPath(import.meta.url)), '..');
+const dist = join(root, 'dist');
+const template = readFileSync(join(root, 'build', 'playbook.html'), 'utf8');
+
+rmSync(dist, { recursive: true, force: true });
+cpSync(join(root, 'site'), dist, { recursive: true });
+
+const escape = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+// A chapter starts with a few "key: value" lines between --- lines: title, and an optional
+// description for search engines and link previews.
+function parse(text, file) {
+  const m = text.match(/^---\n([\s\S]*?)\n---\n/);
+  if (!m) throw new Error(`${file}: starts without its --- title: --- block`);
+  const meta = Object.fromEntries(m[1].split('\n').map((l) => l.split(/:\s*(.*)/s).slice(0, 2)));
+  if (!meta.title) throw new Error(`${file}: has no title`);
+  return { meta, body: text.slice(m[0].length) };
+}
+
+const dir = join(root, 'playbooks');
+const pages = readdirSync(dir).filter((f) => f.endsWith('.md') && f !== 'README.md');
+for (const file of pages) {
+  const source = readFileSync(join(dir, file), 'utf8');
+  const { meta, body } = parse(source, file);
+  const slug = file === 'index.md' ? '' : file.replace(/\.md$/, '');
+  const out = join(dist, 'playbooks', slug);
+  mkdirSync(out, { recursive: true });
+  const html = template
+    .replaceAll('{{title}}', escape(meta.title))
+    .replaceAll('{{description}}', escape(meta.description || ''))
+    .replaceAll('{{root}}', slug ? '../../' : '../')
+    .replaceAll('{{source}}', slug ? `../${file}` : 'index.md')
+    .replace('{{content}}', marked.parse(body));
+  writeFileSync(join(out, 'index.html'), html);
+  writeFileSync(join(dist, 'playbooks', file), source);
+}
+console.log(`built dist/: the site and ${pages.length} playbook page(s)`);
