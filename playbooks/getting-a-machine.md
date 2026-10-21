@@ -27,11 +27,11 @@ Whichever you choose, tell your AI these, so it gets them right:
 
 A virtual machine is a whole computer running inside yours. We use Multipass, Canonical's free tool for Ubuntu virtual machines, on a Mac, Windows or Linux. In Claude Code on your computer, say:
 
-> Create an Ubuntu 26.04 virtual machine with Multipass, named edgible, with 2 CPUs, 4 GB memory and 30 GB disk. Install Multipass first if it isn't here. Don't open any ports.
+> Create an Ubuntu 26.04 virtual machine with Multipass, named edgible-vm, with 2 CPUs, 4 GB memory and 30 GB disk. Install Multipass first if it isn't here. Don't open any ports.
 
 It takes a few minutes. Then, in [Get Edgible running](../get-edgible-running/), Claude Code stays on your computer and sets up the virtual machine from there. Say this in place of step 3:
 
-> Set up Edgible on the Multipass virtual machine named edgible, so I can run my own apps there.
+> Set up Edgible on the Multipass virtual machine named edgible-vm, so I can run my own apps there.
 
 The virtual machine runs while your computer is on and awake. For anything other people rely on, choose a spare computer or a cloud server instead.
 
