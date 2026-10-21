@@ -63,7 +63,7 @@ Not long ago this took an afternoon with a networking guide: domain names, certi
 
 ## What's next
 
-Edgible is running, and your AI knows how to use it. Go back to your playbook, or simply say what you need:
+Edgible is running, and your AI knows how to use it. You're done with this chapter: go back to your playbook, or simply say what you need, in your own words. For example:
 
 > It costs us $40 a month to host our small website. Is there a better way?
 
