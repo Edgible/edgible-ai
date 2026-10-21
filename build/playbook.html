@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}} · Edgible</title>
+  <meta name="description" content="{{description}}">
+  <meta name="theme-color" content="#111827">
+  <link rel="icon" type="image/png" href="{{root}}images/favicon.png">
+  <link rel="alternate" type="text/markdown" title="This page as Markdown" href="{{source}}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* The main page's typeface, colours, top bar and footer (site/index.html), with styles for reading. */
+    @font-face { font-family: "Nexa"; src: url("{{root}}fonts/Nexa-Regular.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Nexa"; src: url("{{root}}fonts/Nexa-Bold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Nexa"; src: url("{{root}}fonts/Nexa-ExtraBold.otf") format("opentype"); font-weight: 800; font-style: normal; font-display: swap; }
+    :root {
+      --night-1: #111827;
+      --night-2: #1e293b;
+      --night-3: #312e81;
+      --surface: rgba(255,255,255,.05);
+      --line: rgba(255,255,255,.12);
+      --yellow: #ffd21f;
+      --heading: #ffffff;
+      --ink: #e6eaff;
+      --muted: #a7b1dc;
+      --radius: 14px;
+      --wrap: 1120px;
+      --read: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { background: linear-gradient(135deg, var(--night-1) 0%, var(--night-2) 45%, var(--night-3) 100%) fixed; background-color: var(--night-1); }
+    body { margin: 0; font-family: Nexa, Jost, system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 17px; color: var(--ink); background: transparent; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: var(--yellow); }
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+
+    header.bar { position: sticky; top: 0; z-index: 10; background: rgba(17,24,39,.72); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    header.bar .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo img { display: block; height: 24px; width: auto; }
+    nav.links { display: flex; gap: 24px; font-weight: 500; font-size: 16px; }
+    nav.links a { text-decoration: none; color: var(--muted); }
+    nav.links a:hover { color: var(--heading); }
+
+    main { max-width: var(--read); margin: 0 auto; padding: 56px 24px 88px; }
+    h1, h2, h3 { color: var(--heading); line-height: 1.25; font-weight: 800; }
+    h1 { font-size: 40px; margin: 0 0 16px; }
+    h2 { font-size: 26px; margin: 48px 0 12px; }
+    h3 { font-size: 20px; margin: 32px 0 8px; }
+    p, li { max-width: 70ch; }
+    strong { color: var(--heading); }
+    blockquote { margin: 20px 0; padding: 16px 20px; background: var(--surface); border-left: 3px solid var(--yellow); border-radius: 0 var(--radius) var(--radius) 0; }
+    blockquote p { margin: 0; }
+    code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: .9em; background: var(--surface); padding: 2px 6px; border-radius: 6px; }
+    pre { background: rgba(0,0,0,.35); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; overflow-x: auto; }
+    pre code { background: none; padding: 0; }
+    details { margin: 24px 0; padding: 12px 18px; border: 1px solid var(--line); border-radius: var(--radius); }
+    summary { cursor: pointer; color: var(--heading); font-weight: 700; }
+    table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 16px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--heading); }
+    hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
+
+    footer { padding: 32px 0; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
+    footer a { color: var(--muted); }
+    footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+
+    @media (max-width: 560px) {
+      .wrap { padding: 0 16px; }
+      main { padding: 40px 16px 64px; }
+      nav.links { gap: 16px; font-size: 15px; }
+      h1 { font-size: 32px; }
+      table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="{{root}}"><img src="{{root}}images/edgible-logo-white.png" alt="Edgible" width="107" height="24"></a>
+    <nav class="links">
+      <a href="{{root}}playbooks/">Playbooks</a>
+      <a href="mailto:stefano@edgible.com?subject=Hello%20Edgible">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+{{content}}
+</main>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Edgible. Your data's coming home™ is a trade mark of Edgible.</span>
+    <span><a href="https://cards.edgible.org">Cards</a> · <a href="{{root}}llms.txt">For AI assistants</a> · <a href="{{source}}">This page as Markdown</a></span>
+  </div>
+</footer>
+</body>
+</html>

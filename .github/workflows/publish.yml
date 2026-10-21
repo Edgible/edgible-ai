@@ -1,0 +1,39 @@
+# Builds the site on every push to main and publishes the result to the live branch, which the
+# static-site card behind www.edgible.ai downloads every few minutes. A pull request is built too,
+# so a broken playbook fails its check before it is merged, but only main publishes.
+name: publish
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Publish dist/ to the live branch
+        if: github.event_name != 'pull_request'
+        run: |
+          cd dist
+          git init -q -b live
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Built from ${GITHUB_SHA}"
+          git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" live
