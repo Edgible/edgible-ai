@@ -44,7 +44,7 @@ Five apps in all, each a web address with its own rule for who gets in. You'll s
 | 3 | The gateway's API | Where your agents send their AI requests | Anyone can knock, but only agents holding a key the gateway gave them get an answer |
 | 4 | Your agent | Your agent's chat and settings | Only you |
 
-Some parts have no address at all, such as the Edgible tools behind the connector and inside your agent: nothing outside can reach them except through the apps above. A free Edgible account has room for twenty apps.
+Some parts have no address at all, such as the Edgible tools behind the connector and inside your agent: nothing outside can reach them except through the apps above. An Edgible account has room for twenty apps during the public beta.
 
 ## What you'll need
 
