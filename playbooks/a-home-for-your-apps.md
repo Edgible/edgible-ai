@@ -21,11 +21,11 @@ It suggests linkding, says why, and asks before it sets anything up. It also ask
 
 ## 2. Sign in, and make it yours
 
-Open the address, and sign in as **admin** with that password. Then change the password straight away, under **Settings**. The one you were given isn't shown again.
+Open the address, and sign in as **admin** with that password. Then change the password straight away, under **Settings**. Keep it safe: the one you were given isn't shown again. On a phone, watch for the keyboard capitalising the first letter.
 
 ## 3. Let Claude bookmark your apps
 
-Linkding needs to let Claude add bookmarks. In linkding, open **Settings**, then **Integrations**, and copy the **REST API** token. Then, in Claude:
+Linkding needs to let Claude add bookmarks. In linkding, open **Settings**, then **Integrations**, and copy the **REST API** token. Then switch to Claude, on your phone or computer. Keys always go through Claude, your owner's view, never into your agent's chat:
 
 > Bookmark my apps in linkding.
 
