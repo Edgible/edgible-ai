@@ -24,7 +24,7 @@ Each chapter builds on the one before, and each leaves you with something that w
 | 2 | [Connect Claude to your Edgible](../connect-claude/) | Claude on your phone and desktop can see and change your apps, and store keys safely |
 | 3 | [Your AI gateway](../your-ai-gateway/) | Cost guardrails: one place for your AI keys, a budget per agent, the spending in dollars |
 | 4 | [Your agent](../your-agent/) | Your own AI agent, on your machine, using the gateway |
-| 5 | Run it from your phone | Talk to your agent, check on it, and see what it costs, wherever you are |
+| 5 | [Run it from your phone](../run-it-from-your-phone/) | Talk to your agent, check on it, and see what it costs, wherever you are |
 
 ## Why the gateway comes before the agent
 
@@ -48,6 +48,6 @@ Nothing is hidden: each chapter ends with the same steps done by hand, and every
 
 ## What you'll need
 
-- **Chapter 1 done,** on a machine with 4 GB of memory or more.
+- **Chapter 1 done,** on a machine with **8 GB of memory** or more: the gateway and the agent need about 6 GB between them while they work.
 - **Claude,** on a paid plan, on your computer and your phone.
 - **An AI provider account with a little credit.** We suggest DeepSeek: reliable, and cents a day for most people. Five dollars goes a long way.

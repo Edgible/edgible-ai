@@ -14,7 +14,7 @@ It runs on your machine, uses your AI gateway with **its own key and its own bud
 > **What you need**
 >
 > - [Chapters 1 to 3](../your-own-ai-agent/) done: Edgible running, Claude connected, and your AI gateway.
-> - **4 GB of memory** free on the machine, on top of the gateway.
+> - **8 GB of memory** on the machine in all. The agent needs about 4 GB on top of the gateway, and with less, it gets stopped mid-answer.
 
 ## 1. Ask Claude to set it up
 
@@ -66,7 +66,7 @@ You have your own AI agent, and it's well brought up:
 
 Most people trying agents give one a provider key and hope. Yours has guardrails from the first message.
 
-Next: [Run it from your phone](../your-own-ai-agent/).
+Next: [Run it from your phone](../run-it-from-your-phone/).
 
 <details>
 <summary>Prefer to do it by hand?</summary>
