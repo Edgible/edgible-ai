@@ -50,7 +50,7 @@ If a change needs a key, Claude sends you a key link instead of asking you to pa
 
 ## What you've just done
 
-You've finished the playbook. You have:
+You've done the heart of the playbook. You have:
 
 - **Your own AI agent,** on your own machine, that you can talk to from anywhere, your phone included.
 - **Guardrails that work without you watching:** every agent has its own key and its own budget, and it stops at its limit.
@@ -59,6 +59,8 @@ You've finished the playbook. You have:
 - **Nothing locked in.** It's all open source, on your machine, and each step can be done by hand.
 
 Most people meet AI agents through someone else's service, on someone else's terms. Yours is yours.
+
+One finishing touch: [A home for everything you've built](../a-home-for-your-apps/).
 
 <details>
 <summary>Prefer to do it by hand?</summary>

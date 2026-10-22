@@ -25,6 +25,7 @@ Each chapter builds on the one before, and each leaves you with something that w
 | 3 | [Your AI gateway](../your-ai-gateway/) | Cost guardrails: one place for your AI keys, a budget per agent, the spending in dollars |
 | 4 | [Your agent](../your-agent/) | Your own AI agent, on your machine, using the gateway |
 | 5 | [Run it from your phone](../run-it-from-your-phone/) | Talk to your agent, check on it, and see what it costs, wherever you are |
+| 6 | [A home for everything you've built](../a-home-for-your-apps/) | Your own bookmarks app, set up by your agent, with every app you've built in it |
 
 ## Why the gateway comes before the agent
 
