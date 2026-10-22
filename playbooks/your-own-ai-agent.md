@@ -36,13 +36,15 @@ So before we let an agent loose, we put the guardrails in. An AI gateway sits be
 
 Five apps in all, each a web address with its own rule for who gets in. You'll see them in your Edgible console:
 
-| Chapter | App | What it's for | Who can reach it |
-| --- | --- | --- | --- |
-| 2 | The connector | Where Claude's apps call your Edgible tools | Anyone can knock, but only Claude with your permission gets an answer |
-| 2 | The connector's sign-in page | Where you sign in and allow Claude, and where key links open | Only you and your organisation |
-| 3 | The gateway's admin | The gateway's own settings page | Only you and your organisation |
-| 3 | The gateway's API | Where your agents send their AI requests | Anyone can knock, but only agents holding a key the gateway gave them get an answer |
-| 4 | Your agent | Your agent's chat and settings | Only you |
+| Chapter | App | Its address | What it's for | Who can reach it |
+| --- | --- | --- | --- | --- |
+| 2 | The connector | `https://mcp-signin.<you>.edgible.app/mcp` | Where Claude's apps call your Edgible tools | Anyone can knock, but only Claude with your permission gets an answer |
+| 2 | The connector's sign-in page | `https://mcp-signin-login.<you>.edgible.app` | Where you sign in and allow Claude, and where key links open | Only you and your organisation |
+| 3 | The gateway's admin | `https://ai-gateway.<you>.edgible.app` | The gateway's own settings page | Only you and your organisation |
+| 3 | The gateway's API | `https://ai-gateway-api.<you>.edgible.app` | Where your agents send their AI requests | Anyone can knock, but only agents holding a key the gateway gave them get an answer |
+| 4 | Your agent | `https://my-agent.<you>.edgible.app` | Your agent's chat and settings | Only you |
+
+`<you>` is your organisation's name in Edgible, and the first part is the app's name: the chapters suggest these names, and Claude picks another if one is taken. Note the pairs: the gateway's API ends in `-api`, and the connector's sign-in page in `-login`, which is never the address you give Claude. For your exact addresses, ask Claude *"What are my apps' addresses?"*, look in your Edgible console, or, after chapter 6, open your bookmarks.
 
 Nothing is hidden: each chapter ends with the same steps done by hand, and every change Claude makes is recorded on your machine, for you to read back at any time. Some parts have no address at all, such as the Edgible tools behind the connector and inside your agent: nothing outside can reach them except through the apps above. An Edgible account has room for twenty apps during the public beta.
 

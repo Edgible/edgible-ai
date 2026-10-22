@@ -27,7 +27,7 @@ The gateway is LiteLLM, the most widely used open-source AI gateway, in a versio
 
 In Claude, say:
 
-> Set up an AI gateway on my edgible-vm. I'll use DeepSeek, with Gemini as a backup.
+> Set up an AI gateway on my edgible-vm, called ai-gateway. I'll use DeepSeek, with Gemini as a backup.
 
 It checks the machine, then asks you one thing: whether to give the gateway an address your apps can call. Say yes. That address answers only apps holding a key the gateway gave them, and each app gets its own key and budget. Your connector keeps the gateway's own master key, so you never handle it.
 

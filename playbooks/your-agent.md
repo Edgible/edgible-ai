@@ -20,7 +20,7 @@ It runs on your machine, uses your AI gateway with **its own key and its own bud
 
 In Claude, say:
 
-> Set up my own AI agent on my edgible-vm. It should use my AI gateway, with a budget of five dollars a month.
+> Set up my own AI agent on my edgible-vm, called my-agent. It should use my AI gateway, with a budget of five dollars a month.
 
 Claude does three things, and asks before each:
 
