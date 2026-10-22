@@ -1,6 +1,8 @@
 ---
 title: Under the hood
 description: What the AI agent playbook does for you that's easy to miss, for experts and the curious: how your data, keys and costs stay under your control.
+prev: your-own-ai-agent
+next: get-edgible-running
 ---
 
 # Under the hood
