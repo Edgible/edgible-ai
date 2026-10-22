@@ -32,6 +32,20 @@ An agent works in loops: it thinks, calls a tool, reads the result, and thinks a
 
 So before we let an agent loose, we put the guardrails in. An AI gateway sits between your agents and the AI providers: one address, your keys in one safe place, a budget per agent, and a running total of what each one spends. Welcome to the world of AI gateways. We make it easy.
 
+## What it adds to your Edgible
+
+Five apps in all, each a web address with its own rule for who gets in. You'll see them in your Edgible console:
+
+| Chapter | App | What it's for | Who can reach it |
+| --- | --- | --- | --- |
+| 2 | The connector | Where Claude's apps call your Edgible tools | Anyone can knock, but only Claude with your permission gets an answer |
+| 2 | The connector's sign-in page | Where you sign in and allow Claude, and where key links open | Only you and your organisation |
+| 3 | The gateway's admin | The gateway's own settings page | Only you and your organisation |
+| 3 | The gateway's API | Where your agents send their AI requests | Anyone can knock, but only agents holding a key the gateway gave them get an answer |
+| 4 | Your agent | Your agent's chat and settings | Only you |
+
+Some parts have no address at all, such as the Edgible tools behind the connector and inside your agent: nothing outside can reach them except through the apps above. A free Edgible account has room for twenty apps.
+
 ## What you'll need
 
 - **Chapter 1 done,** on a machine with 4 GB of memory or more.
