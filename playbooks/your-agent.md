@@ -1,6 +1,8 @@
 ---
 title: Your agent
 description: Your own AI agent, OpenClaw, on your machine, using your AI gateway with its own key and budget, behind your Edgible sign-in.
+prev: your-ai-gateway
+next: run-it-from-your-phone
 ---
 
 # Your agent
@@ -65,8 +67,6 @@ You have your own AI agent, and it's well brought up:
 - **It asks before it acts** on your apps, every time.
 
 Most people trying agents give one a provider key and hope. Yours has guardrails from the first message.
-
-Next: [Run it from your phone](../run-it-from-your-phone/).
 
 <details>
 <summary>Prefer to do it by hand?</summary>

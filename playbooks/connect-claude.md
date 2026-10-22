@@ -1,6 +1,8 @@
 ---
 title: Connect Claude to your Edgible
 description: Use Claude on your phone, desktop or the web to see and look after your apps, and to store keys safely, through a connector on your own machine.
+prev: get-edgible-running
+next: your-ai-gateway
 ---
 
 # Connect Claude to your Edgible
@@ -56,8 +58,6 @@ You've put Edgible in your pocket:
 - **Only you get in.** Claude reaches the connector through your Edgible sign-in, and it can change things only on the machine you allowed.
 - **Keys stay out of chats.** When Claude needs a key, it gives you a one-time link instead. You paste the key there, and it goes straight to your Edgible account.
 - **It runs on your machine,** not on someone else's service.
-
-Next, the guardrails: [Your AI gateway](../your-ai-gateway/).
 
 <details>
 <summary>Prefer to do it by hand?</summary>

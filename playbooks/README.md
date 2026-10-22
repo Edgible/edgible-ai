@@ -8,8 +8,12 @@ A chapter starts with its title and a one-line description:
 ---
 title: Get Edgible running
 description: Put Edgible on a machine that stays on, with your AI assistant doing the work.
+prev: your-own-ai-agent
+next: connect-claude
 ---
 ```
+
+`prev:` and `next:` name the pages before and after it, by file name without `.md`; the build turns them into Previous and Next buttons at the end of the page, and stops if one names a page that doesn't exist.
 
 How a chapter reads:
 

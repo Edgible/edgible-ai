@@ -1,6 +1,7 @@
 ---
 title: Getting a machine
 description: Where to run Edgible if you have no spare computer: a virtual machine on your own computer, or a small cloud server, with your AI assistant doing the setup.
+next: get-edgible-running
 ---
 
 # Getting a machine

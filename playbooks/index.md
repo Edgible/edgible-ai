@@ -15,4 +15,10 @@ Start here:
 
 New:
 
-- **[Your own AI agent, from anywhere](your-own-ai-agent/):** your own agent on your machine, used from your phone, safely and with its costs under control. Its [AI gateway](your-ai-gateway/) chapter puts the cost guardrails in first.
+- **[Your own AI agent, from anywhere](your-own-ai-agent/):** your own agent on your machine, used from your phone, safely and with its costs under control.
+  1. [Get Edgible running](get-edgible-running/)
+  2. [Connect Claude to your Edgible](connect-claude/)
+  3. [Your AI gateway](your-ai-gateway/): the cost guardrails, first
+  4. [Your agent](your-agent/)
+  5. [Run it from your phone](run-it-from-your-phone/)
+  6. [A home for everything you've built](a-home-for-your-apps/)

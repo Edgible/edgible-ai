@@ -1,6 +1,8 @@
 ---
 title: Run it from your phone
 description: Talk to your own AI agent, check on your apps, and see what your AI really costs, from your phone, wherever you are.
+prev: your-agent
+next: a-home-for-your-apps
 ---
 
 # Run it from your phone

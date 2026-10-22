@@ -27,6 +27,18 @@ function parse(text, file) {
 
 const dir = join(root, 'playbooks');
 const pages = readdirSync(dir).filter((f) => f.endsWith('.md') && f !== 'README.md');
+// First every page's settings, so each can link to the pages before and after it by their titles.
+const all = Object.fromEntries(pages.map((file) => [file.replace(/\.md$/, ''), parse(readFileSync(join(dir, file), 'utf8'), file).meta]));
+// prev: and next: name another page by its file name, without .md.
+function nav(meta, file) {
+  const link = (slug, dir) => {
+    if (!slug) return '';
+    if (!all[slug]) throw new Error(`${file}: ${dir} names ${slug}, which is not a page`);
+    return `<a class="${dir}" href="../${slug}/"><span>${dir === 'prev' ? '← Previous' : 'Next →'}</span>${escape(all[slug].title)}</a>`;
+  };
+  const html = link(meta.prev, 'prev') + link(meta.next, 'next');
+  return html ? `<nav class="chapters">${html}</nav>` : '';
+}
 for (const file of pages) {
   const source = readFileSync(join(dir, file), 'utf8');
   const { meta, body } = parse(source, file);
@@ -38,7 +50,7 @@ for (const file of pages) {
     .replaceAll('{{description}}', escape(meta.description || ''))
     .replaceAll('{{root}}', slug ? '../../' : '../')
     .replaceAll('{{source}}', slug ? `../${file}` : 'index.md')
-    .replace('{{content}}', marked.parse(body));
+    .replace('{{content}}', marked.parse(body) + (slug ? nav(meta, file) : ''));
   writeFileSync(join(out, 'index.html'), html);
   writeFileSync(join(dist, 'playbooks', file), source);
 }
