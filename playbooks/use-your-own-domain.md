@@ -1,6 +1,7 @@
 ---
 title: Use your own domain
 description: Give any app an address on a domain you own, such as links.yourname.com, without interrupting it.
+prev: a-home-for-your-apps
 ---
 
 # Use your own domain
