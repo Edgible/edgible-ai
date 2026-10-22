@@ -1,0 +1,65 @@
+---
+title: Under the hood
+description: What the AI agent playbook does for you that's easy to miss, for experts and the curious: how your data, keys and costs stay under your control.
+---
+
+# Under the hood
+
+*For the experts and the curious, alongside [Your own AI agent, from anywhere](../your-own-ai-agent/).*
+
+The playbook reads as a handful of plain sentences to an AI. Behind them, a lot happens that's easy to miss. This page sets it out, so that you, or someone you ask, can judge whether it's done properly. Everything here was built and tested on our own machines; where something isn't done yet, the last section says so.
+
+The theme is one idea: **keep your data close, with confidence.** Close, because it runs on a machine you control. Confidence, because what's close is also locked down, costed and recoverable.
+
+## <span class="ico" aria-hidden="true"><svg><use href="../../images/icons.svg#home"/></svg></span>1. Nothing exposed by default
+
+- **No inbound ports.** Edgible's agent on your machine connects out to Edgible. Nothing on your router or firewall is opened, and your machine's own address is never published.
+- **Every page sits behind your Edgible sign-in** unless it has to be open: the gateway's admin, the connector's sign-in page and your agent all use it.
+- **The few open addresses answer only credentials you authorised.** The connector answers only Claude, with a token issued after you signed in and allowed it. The gateway's API answers only keys it issued itself. Linkding is open so its browser extension and phone apps can reach it, behind its own sign-in.
+- **Your agent trusts only Edgible's sign-in.** OpenClaw runs in trusted-proxy mode: it takes your identity from a header that Edgible's front door sets, and strips from anything a client sends, and admits only the email addresses you named. It trusts that header from one address only, the proxy in front of it.
+
+## <span class="ico" aria-hidden="true"><svg><use href="../../images/icons.svg#lock"/></svg></span>2. Keys never travel through chat
+
+- **Key links.** When a key is needed, Claude gives you a one-time link that works for ten minutes, and you paste the key there. Claude never sees it, and it never sits in a chat history.
+- **Provider keys are stored once,** as Edgible organisation secrets, and passed to apps by reference when they start. They're never written into a settings file or an app's configuration.
+- **Passwords are made on your machine,** at the app's first start, by a small helper that never shows them again. The one exception is a first-use password a person needs, shown to you once and meant to be changed at once.
+- **The gateway's master key is kept by your connector** and shown to nobody, Claude included. Claude asks the connector to make keys and report spending; it never handles the master key itself.
+- **Logs are treated as secret.** The gateway's own logs record callers' keys, so our tools read only app names, models and numbers from them, and never pass a key on.
+
+## <span class="ico" aria-hidden="true"><svg><use href="../../images/icons.svg#govern"/></svg></span>3. Least privilege, by default
+
+- **Each agent has its own key,** with its own budget, limited to the routes it needs: asking models, listing them, and reading its own record. It can't read other agents' spending or reach the gateway's admin.
+- **What you see depends on who's asking.** Through Claude, the owner sees every agent's spending by model. An agent sees only its own, and says so.
+- **The connector may change only the machines you allowed,** and Claude asks before every change: setting up, moving, restarting or removing an app, changing a budget, giving an app your domain.
+- **Every change is recorded** on your machine: what, when, on which machine, and that you agreed. Ask Claude to show it at any time.
+
+## <span class="ico" aria-hidden="true"><svg><use href="../../images/icons.svg#record"/></svg></span>4. Costs that can't run away
+
+- **Every agent has a budget,** and stops at it. The dearest model, `best`, has its own cap on top.
+- **Backups only go sideways or down.** When a provider fails, the request falls to a cheaper or equal model, never a dearer one.
+- **Private stays private.** A model on your own machine never falls back to one on the internet.
+- **You can check the real dollars any time,** by agent and by model, and a test question costs a tiny fraction of a cent.
+
+## <span class="ico" aria-hidden="true"><svg><use href="../../images/icons.svg#tested"/></svg></span>5. Software you can trust
+
+- **Exact, tested versions.** Each app runs a pinned version that our regression has set up from scratch, published, checked and torn down.
+- **Tested where it runs.** We test on the hardware people actually use, ARM included. That's how we found that one LiteLLM release's ARM image held Intel programs: it ran on a Mac only because the Mac quietly emulated them, and failed on real ARM Linux. We moved to a version that works, and [reported it](https://github.com/BerriAI/litellm/issues/47887).
+- **No automatic upgrades.** A new version reaches you only after it has been tested, never because it was released. LiteLLM's own supply-chain incident in March 2026 is the reason it matters.
+- **Agents are told the house rules.** The Edgible skill tells assistants to ask before risky steps, give honest advice, including when not to self-host, never print a secret, and stop at the first failure rather than work around it.
+
+## <span class="ico" aria-hidden="true"><svg><use href="../../images/icons.svg#recipe"/></svg></span>6. No black box, no lock-in
+
+- **Every step can be done by hand.** Each chapter ends with the same steps without AI, taken from the card READMEs our regression runs exactly as written.
+- **Open-source apps, on your machine:** OpenClaw, LiteLLM, linkding. Your data is in your machine's volumes, classified so backups and moves know what matters.
+- **Moving is built in.** An app can move to another machine, data and all, with a check that the data arrived intact.
+- **Your own domain** for any app, with HTTPS, without interrupting it.
+
+## <span class="ico" aria-hidden="true"><svg><use href="../../images/icons.svg#map"/></svg></span>Known limits
+
+We'd rather you heard these from us:
+
+- **Your agent can't give you key links yet,** so storing a key happens in Claude, not in the agent's chat.
+- **A lost first-use password needs a terminal** to recover today. A no-terminal way is planned.
+- **Two copies of the same app on one machine** can clash over a port, so for now, one of each per machine.
+- **A virtual machine is on only while your computer is.** It's right for trying things out, not for apps other people rely on.
+- **Edgible is in public beta.** An account holds twenty apps for now, and when a machine loses its internet connection, its link to Edgible can take a restart to recover.
