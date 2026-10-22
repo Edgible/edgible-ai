@@ -24,7 +24,9 @@ In Claude Code, on your own computer, say:
 
 It sets the connector up on your machine and gives it its own web address. Along the way it asks you to approve one sign-in, with a link and a code as in chapter 1: that lets the connector act for your Edgible account.
 
-At the end, it gives you the connector's address. Copy it.
+Along the way it may find and fix small problems, such as the clock on a virtual machine, and it tells you what it did. If you already have a connector, it says so, and you can keep using that one.
+
+At the end, it gives you the connector's address. Copy it: it ends in **`/mcp`**. Lost it? Ask: *"What's my Edgible connector's address?"*
 
 ## 2. Add it to Claude
 
@@ -35,6 +37,8 @@ In the Claude app on your computer, or at claude.ai:
 3. Choose **Connect**. An Edgible page opens: sign in with your Edgible account, and allow Claude.
 
 That's all. Your phone's Claude app picks it up by itself, since it's the same Claude account.
+
+If Claude says it *couldn't check the server* or *couldn't register*, check the address: it ends in `/mcp`, and it doesn't have `-login` in it. That one is the sign-in page you see, not the connector.
 
 ## 3. Try it from your phone
 

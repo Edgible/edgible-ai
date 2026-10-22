@@ -29,19 +29,19 @@ In Claude, say:
 
 > Set up an AI gateway on my edgible-vm. I'll use DeepSeek, with Gemini as a backup.
 
-It checks the machine, then sets the gateway up and keeps it private: only your apps and you can reach it.
+It checks the machine, then asks you one thing: whether to give the gateway an address your apps can call. Say yes. That address answers only apps holding a key the gateway gave them, and each app gets its own key and budget. Your connector keeps the gateway's own master key, so you never handle it.
 
 ## 2. Store your keys
 
-Claude gives you a **key link** for each provider. Open it, paste the key from the provider's page, and save. The key goes straight to your Edgible account, never into the chat. Links work once, for ten minutes, and from your phone too.
+If you stored these keys with Edgible before, Claude simply uses them and skips this step. Otherwise, Claude gives you a **key link** for each provider. Open it, paste the key from the provider's page, and save. The key goes straight to your Edgible account, never into the chat. Links work once, for ten minutes, and from your phone too.
 
 You only ever do this once. Every agent you add later uses the same keys, through the gateway.
 
 ## 3. Check it answers
 
-> Ask my AI gateway a quick question with the fast model.
+> Check my AI gateway answers.
 
-It should answer in a second or two, and tell you which provider replied.
+It sends one tiny question through the gateway, and tells you which provider answered, how long it took, and what it cost: a tiny fraction of a cent.
 
 ## The models, by purpose
 
