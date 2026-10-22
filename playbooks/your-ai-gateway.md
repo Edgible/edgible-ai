@@ -5,7 +5,7 @@ description: Cost guardrails before you run an agent: one place for your AI keys
 
 # Your AI gateway
 
-*Chapter 3 of [Your own AI agent, from anywhere](../your-own-ai-agent/). Draft: being tested now.*
+*Chapter 3 of [Your own AI agent, from anywhere](../your-own-ai-agent/). New: tested on our own machines, so [tell us how it goes](mailto:stefano@edgible.com?subject=Playbook%20feedback).*
 
 Before you run an agent, put the guardrails in. An AI gateway sits between your agents and the AI providers, and gives you:
 

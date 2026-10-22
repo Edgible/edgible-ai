@@ -5,7 +5,7 @@ description: Your agent sets you up your own bookmarks app, and every app you've
 
 # A home for everything you've built
 
-*Chapter 6 of [Your own AI agent, from anywhere](../your-own-ai-agent/), the finishing touch. Draft: being tested now.*
+*Chapter 6 of [Your own AI agent, from anywhere](../your-own-ai-agent/), the finishing touch. New: tested on our own machines, so [tell us how it goes](mailto:stefano@edgible.com?subject=Playbook%20feedback).*
 
 By now you have several apps, each with its own address. This chapter gives them a home: your own bookmarks app, set up by your agent, with every app you've built already in it.
 

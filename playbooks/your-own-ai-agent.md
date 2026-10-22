@@ -5,7 +5,7 @@ description: A playbook for running your own AI agent on a machine you control, 
 
 # Your own AI agent, from anywhere
 
-*Draft: this playbook is being written and tested now.*
+*New: tested end to end on our own machines. You're among the first to follow it, so please [tell us how it goes](mailto:stefano@edgible.com?subject=Playbook%20feedback).*
 
 AI agents do things for you: they research, write, organise, and use your apps. This playbook gets you one of your own:
 

@@ -5,7 +5,7 @@ description: Your own AI agent, OpenClaw, on your machine, using your AI gateway
 
 # Your agent
 
-*Chapter 4 of [Your own AI agent, from anywhere](../your-own-ai-agent/). Draft: being tested now.*
+*Chapter 4 of [Your own AI agent, from anywhere](../your-own-ai-agent/). New: tested on our own machines, so [tell us how it goes](mailto:stefano@edgible.com?subject=Playbook%20feedback).*
 
 Now the agent itself. It's **OpenClaw**, a popular open-source AI agent: it chats, remembers, researches, and uses tools on your behalf. Yours comes with Edgible's tools and skill built in, so it can also look after your apps, asking you first before it changes anything.
 

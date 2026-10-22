@@ -5,7 +5,7 @@ description: Talk to your own AI agent, check on your apps, and see what your AI
 
 # Run it from your phone
 
-*Chapter 5 of [Your own AI agent, from anywhere](../your-own-ai-agent/). Draft: being tested now.*
+*Chapter 5 of [Your own AI agent, from anywhere](../your-own-ai-agent/). New: tested on our own machines, so [tell us how it goes](mailto:stefano@edgible.com?subject=Playbook%20feedback).*
 
 Everything is in place. This chapter is about using it from where you actually are: on your phone, away from your desk. There's nothing new to install.
 

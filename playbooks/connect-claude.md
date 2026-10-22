@@ -5,7 +5,7 @@ description: Use Claude on your phone, desktop or the web to see and look after 
 
 # Connect Claude to your Edgible
 
-*Chapter 2 of [Your own AI agent, from anywhere](../your-own-ai-agent/). Draft: being tested now.*
+*Chapter 2 of [Your own AI agent, from anywhere](../your-own-ai-agent/). New: tested on our own machines, so [tell us how it goes](mailto:stefano@edgible.com?subject=Playbook%20feedback).*
 
 So far, Claude Code on your computer does the work. This chapter lets **every Claude** do it: the Claude app on your phone, on your desktop, and on the web. Ask what's running, whether something answers, or for a new app, from wherever you are.
 

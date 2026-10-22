@@ -13,6 +13,6 @@ Start here:
 - **[Getting a machine](getting-a-machine/):** no spare computer? A virtual machine on yours, or a small cloud server.
 - **[Use your own domain](use-your-own-domain/):** give any app an address on a domain you own.
 
-Being written now:
+New:
 
 - **[Your own AI agent, from anywhere](your-own-ai-agent/):** your own agent on your machine, used from your phone, safely and with its costs under control. Its [AI gateway](your-ai-gateway/) chapter puts the cost guardrails in first.
