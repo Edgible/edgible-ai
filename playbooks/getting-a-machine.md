@@ -18,7 +18,7 @@ Edgible runs on a computer you control. If you have a spare one, use that. If no
 Whichever you choose, tell your AI these, so it gets them right:
 
 - **Ubuntu 24.04 or 26.04,** or a Mac. Not WSL on Windows: Edgible can't publish apps from there yet.
-- **Memory:** 2 GB for a website, 4 GB for an AI agent.
+- **Memory:** 2 GB for a website, 4 GB for an AI gateway, 8 GB for your own AI agent with its gateway.
 - **Disk:** 20 to 30 GB free.
 - **Internet out, and no ports in.** Edgible connects out, so there's nothing to open in a firewall or router. If your AI offers to open a port for Edgible, say no.
 - **On when you need it.** For apps other people use, a machine that stays on.
@@ -27,7 +27,7 @@ Whichever you choose, tell your AI these, so it gets them right:
 
 A virtual machine is a whole computer running inside yours. We use Multipass, Canonical's free tool for Ubuntu virtual machines, on a Mac, Windows or Linux. In Claude Code on your computer, say:
 
-> Create an Ubuntu 26.04 virtual machine with Multipass, named edgible-vm, with 2 CPUs, 4 GB memory and 30 GB disk. Install Multipass first if it isn't here. Don't open any ports.
+> Create an Ubuntu 26.04 virtual machine with Multipass, named edgible-vm, with 2 CPUs, 8 GB memory and 30 GB disk. Install Multipass first if it isn't here. Don't open any ports.
 
 It takes a few minutes. Then, in [Get Edgible running](../get-edgible-running/), Claude Code stays on your computer and sets up the virtual machine from there. Say this in place of step 3:
 
@@ -39,13 +39,11 @@ And in step 4:
 
 The virtual machine runs while your computer is on and awake. For anything other people rely on, choose a spare computer or a cloud server instead.
 
-**What you've just done:** you have a whole Ubuntu server, free, running inside your own computer, without changing anything on your computer itself. Not sure about it? Say *"Delete the edgible-vm"*, and it's gone. Like it? When other people come to rely on your apps, your AI can move them to a machine that stays on, data and all.
-
 ## A small cloud server
 
 A server you rent by the month, from Hetzner, DigitalOcean or AWS Lightsail for example. You make the account and pay; your AI walks you through the rest:
 
-> Help me create a small Ubuntu 26.04 server at Hetzner with 4 GB memory. Sign-in with an SSH key only, and no inbound ports except SSH. I'll install Edgible on it.
+> Help me create a small Ubuntu 26.04 server at Hetzner with 8 GB memory. Sign-in with an SSH key only, and no inbound ports except SSH. I'll install Edgible on it.
 
 Then, in [Get Edgible running](../get-edgible-running/), say this in place of step 3, with your server's address:
 
@@ -60,3 +58,11 @@ An old laptop or desktop works well. A Mac can run Edgible as it is: just set it
 > Help me put Ubuntu 26.04 on my old PC, so it can run Edgible all the time. I have a USB stick.
 
 Then follow [Get Edgible running](../get-edgible-running/) on that computer, or from your own, as above.
+
+## What you've just done
+
+You have a machine for Edgible, without buying anything you didn't need, and your AI did the fiddly parts.
+
+- **A virtual machine** is a whole Ubuntu server, free, inside your own computer, and nothing on your computer itself changed. Not sure about it? Say *"Delete the edgible-vm"*, and it's gone.
+- **A cloud server or a spare computer** stays on, so it's ready for apps other people rely on.
+- **Either way, you can change your mind.** Start in a virtual machine, and when other people come to rely on your apps, your AI can move them to a machine that stays on, data and all.
