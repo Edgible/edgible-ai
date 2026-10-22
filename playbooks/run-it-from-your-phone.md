@@ -44,7 +44,7 @@ From your phone, Claude can also change things. It asks you first every time:
 
 > Raise my agent's budget to ten dollars a month.
 
-> My agent seems stuck. Can you check it and restart it if it needs it?
+Claude shows you the old and new budget, and what your agent has spent so far, before it changes anything.
 
 If a change needs a key, Claude sends you a key link instead of asking you to paste it into the chat.
 
