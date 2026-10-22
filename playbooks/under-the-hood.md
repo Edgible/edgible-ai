@@ -11,6 +11,23 @@ The playbook reads as a handful of plain sentences to an AI. Behind them, a lot 
 
 The theme is one idea: **keep your data close, with confidence.** Close, because it runs on a machine you control. Confidence, because what's close is also locked down, costed and recoverable.
 
+## <span class="ico" aria-hidden="true"><svg><use href="../../images/icons.svg#machine"/></svg></span>Where Edgible comes in
+
+Three kinds of thing work together in this playbook. **Open-source apps** do the jobs: OpenClaw the agent, LiteLLM the gateway, linkding the bookmarks. **Our open recipes and skill** (the cards, card-kit and the Edgible skill for AI assistants) set them up the same tested way every time. And **Edgible**, the platform, gives each app a safe way to be reached and run. This is Edgible's part, and what you'd otherwise put together yourself:
+
+| What you get | What Edgible does | Without Edgible, you'd need |
+| --- | --- | --- |
+| Apps reachable from anywhere, with no ports opened | A small agent on your machine connects out to Edgible, which carries each app's traffic in | A static address or dynamic DNS, open ports on your router, or a VPN or tunnel service you run |
+| A web address and HTTPS for every app | Generates each app's address and issues and renews its certificate; your own domain with one CNAME | A domain, DNS records and a certificate tool for each app |
+| Sign-in in front of every app | Edgible's own sign-in, per app: only your organisation, open, or a key; it passes the signed-in person's email to the app and strips any forgery | An identity server such as Authelia or Authentik, set up for each app |
+| Keys kept out of files and chats | Organisation secrets, stored once and handed to apps by reference when they start | A secrets manager, or keys in settings files on the machine |
+| Apps described, not hand-built | Each app is a declaration: what runs, where, how it's reached and with which secrets, applied in one step and changed in place | Scripts and notes per machine, and remembering what you did |
+| A fleet you can see and steer | Your machines and apps in one console and one command line, each machine's agent updating itself and rolling back if an update fails | Logging in to each machine to check on it |
+| Moving to another machine | Starts the app on the new machine, switches its traffic over, then stops the old copy | Backing up, copying, reconfiguring and re-pointing DNS by hand |
+| AI that can help, safely | An official command line and MCP tools that AI assistants use, signed in with a code you approve | Giving an AI broad access to your machine, or doing it all yourself |
+
+Everything Edgible doesn't do is open and yours: the apps, the recipes and the data. The recipes run without Edgible too, with a reverse proxy of your choosing. Edgible is what makes them reachable, signed-in and steerable without the plumbing.
+
 ## <span class="ico" aria-hidden="true"><svg><use href="../../images/icons.svg#home"/></svg></span>1. Nothing exposed by default
 
 - **No inbound ports.** Edgible's agent on your machine connects out to Edgible. Nothing on your router or firewall is opened, and your machine's own address is never published.

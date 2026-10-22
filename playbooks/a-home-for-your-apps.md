@@ -49,7 +49,7 @@ New apps appear. If you've removed one, Claude tells you its bookmark is out of 
 
 From here, every app you add gets a home too.
 
-Want nicer addresses, such as `links.yourname.com`? See [Use your own domain](../use-your-own-domain/).
+Want nicer addresses, such as `links.yourname.com`? See [Use your own domain](../use-your-own-domain/). Curious what you've just built, and how it's kept safe? Read [Under the hood](../under-the-hood/).
 
 <details>
 <summary>Prefer to do it by hand?</summary>

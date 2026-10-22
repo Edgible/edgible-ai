@@ -22,3 +22,7 @@ New:
   4. [Your agent](your-agent/)
   5. [Run it from your phone](run-it-from-your-phone/)
   6. [A home for everything you've built](a-home-for-your-apps/)
+
+For the experts and the curious:
+
+- **[Under the hood](under-the-hood/):** what the agent playbook does for you that's easy to miss, where Edgible comes in, and the known limits.
