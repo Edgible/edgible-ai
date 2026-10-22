@@ -18,7 +18,7 @@ Edgible runs on a computer you control. If you have a spare one, use that. If no
 Whichever you choose, tell your AI these, so it gets them right:
 
 - **Ubuntu 24.04 or 26.04,** or a Mac. Not WSL on Windows: Edgible can't publish apps from there yet.
-- **Memory:** 2 GB for a website, 4 GB for an AI agent.
+- **Memory:** 2 GB for a website, 4 GB for an AI gateway, 8 GB for your own AI agent with its gateway.
 - **Disk:** 20 to 30 GB free.
 - **Internet out, and no ports in.** Edgible connects out, so there's nothing to open in a firewall or router. If your AI offers to open a port for Edgible, say no.
 - **On when you need it.** For apps other people use, a machine that stays on.
@@ -27,7 +27,7 @@ Whichever you choose, tell your AI these, so it gets them right:
 
 A virtual machine is a whole computer running inside yours. We use Multipass, Canonical's free tool for Ubuntu virtual machines, on a Mac, Windows or Linux. In Claude Code on your computer, say:
 
-> Create an Ubuntu 26.04 virtual machine with Multipass, named edgible-vm, with 2 CPUs, 4 GB memory and 30 GB disk. Install Multipass first if it isn't here. Don't open any ports.
+> Create an Ubuntu 26.04 virtual machine with Multipass, named edgible-vm, with 2 CPUs, 8 GB memory and 30 GB disk. Install Multipass first if it isn't here. Don't open any ports.
 
 It takes a few minutes. Then, in [Get Edgible running](../get-edgible-running/), Claude Code stays on your computer and sets up the virtual machine from there. Say this in place of step 3:
 
@@ -43,7 +43,7 @@ The virtual machine runs while your computer is on and awake. For anything other
 
 A server you rent by the month, from Hetzner, DigitalOcean or AWS Lightsail for example. You make the account and pay; your AI walks you through the rest:
 
-> Help me create a small Ubuntu 26.04 server at Hetzner with 4 GB memory. Sign-in with an SSH key only, and no inbound ports except SSH. I'll install Edgible on it.
+> Help me create a small Ubuntu 26.04 server at Hetzner with 8 GB memory. Sign-in with an SSH key only, and no inbound ports except SSH. I'll install Edgible on it.
 
 Then, in [Get Edgible running](../get-edgible-running/), say this in place of step 3, with your server's address:
 
