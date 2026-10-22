@@ -71,6 +71,11 @@ Next: [Run it from your phone](../your-own-ai-agent/).
 <details>
 <summary>Prefer to do it by hand?</summary>
 
-The agent is the [edgible-agent card](https://github.com/edgible-org/cards/tree/main/edgible-agent), in its shared-gateway mode: its README has every step.
+What Claude does, in order. The agent is the [edgible-agent card](https://github.com/edgible-org/cards/tree/main/edgible-agent) in its shared-gateway mode; its README has every step, and our regression runs it as written.
+
+1. **Make the agent's gateway key** in the gateway's admin page: Keys, Create key, named after the agent, with a budget of 5 dollars per 30 days, and allowed routes `/v1/chat/completions`, `/v1/models` and `/key/info`, so it can't read anyone else's spending.
+2. **On the machine, the edgible-agent card.** In its `card.env`: `COMPOSE_PROFILES` empty (no gateway of its own), `OPENCLAW_MODEL_URL` set to your gateway's API address ending `/v1`, `OPENCLAW_MODEL_KEY` to the key from step 1, `OPENCLAW_USERS` to the email you sign in to Edgible with, and, to let it change apps, `EDGIBLE_MCP_ALLOW_WRITE=1` with `EDGIBLE_MCP_DEVICES` set to this machine. Then Check and Start.
+3. **Publish it** on `org`.
+4. **Sign its Edgible tools in,** once: the README's `edgible auth login --no-browser` inside its `edgible-mcp` container, or ask the agent *"Sign in to Edgible"*.
 
 </details>

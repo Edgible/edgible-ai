@@ -69,6 +69,13 @@ Most people running agents have none of this, and find out at the end of the mon
 <details>
 <summary>Prefer to do it by hand?</summary>
 
-The gateway is the [litellm card](https://cards.edgible.org): its README has every step, the settings in `card.env`, and how to add any provider LiteLLM supports.
+What Claude does, in order. The gateway is the [litellm card](https://github.com/edgible-org/cards/tree/main/litellm); its README has every step, and our regression runs it as written.
+
+1. **Store your provider keys** with Edgible, each from a file holding just the key: `edgible secret set deepseek --from-file key=deepseek.txt`, and the same for `gemini`. Then delete the files.
+2. **On the machine, the litellm card.** Pass the keys to it by name, then Check, Start, and publish `litellm` on `org` (the admin page).
+3. **Publish its API** as `litellm-api` on `none`, as the README's Share it step shows: it answers only keys the gateway issued.
+4. **Check it:** sign in to the admin page as `admin`, with the master key the README's `show` command prints on the machine, and send a test message to `fast`. The admin page is also where you make agents' keys and see spending.
+
+Claude does one more thing you don't need by hand: it gives your connector the gateway's address and master key, so you can ask Claude about spending.
 
 </details>

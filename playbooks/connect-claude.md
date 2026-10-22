@@ -62,6 +62,13 @@ Next, the guardrails: [Your AI gateway](../your-ai-gateway/).
 <details>
 <summary>Prefer to do it by hand?</summary>
 
-The connector is the [edgible-connector card](https://github.com/edgible-org/cards/tree/main/edgible-connector): its README has every step.
+What Claude does, in order. Each step is in the [edgible-connector card](https://github.com/edgible-org/cards/tree/main/edgible-connector)'s README, which our regression runs as written.
+
+1. **On the machine, the edgible-connector card.** In its `card.env`: `DEVICE` (this machine's Edgible name), `ORG_LABEL`, and, to let Claude make changes, `EDGIBLE_MCP_ALLOW_WRITE=1` with `EDGIBLE_MCP_DEVICES` set to this machine. Then Check and Start.
+2. **Sign its Edgible tools in,** once: the README's `edgible auth login --no-browser` inside the `edgible-mcp` container, then open the link and approve.
+3. **Publish its two addresses:** `mcp-signin` on `none` (the connector) and `mcp-signin-login` on `org` (the sign-in page).
+4. **In Claude:** Settings, Connectors, Add custom connector, with `https://<mcp-signin address>/mcp`.
 
 </details>
+
+**See what Claude did.** Every change it makes through the connector is recorded on your machine: ask *"Show me what you've changed on my Edgible"* at any time.
