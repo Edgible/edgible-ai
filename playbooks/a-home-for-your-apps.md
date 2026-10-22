@@ -17,7 +17,7 @@ In your agent, on your computer or your phone:
 
 > Set me up somewhere to keep my bookmarks.
 
-It suggests linkding, says why, and asks before it sets anything up. At the end, it gives you linkding's address and a one-time password.
+It suggests linkding, says why, and asks before it sets anything up. It also asks you to confirm that linkding's address is open to anyone: say yes. Linkding has its own sign-in, and only you will have the password; that's also what lets its browser extension and phone apps reach it. At the end, it gives you linkding's address and a one-time password.
 
 ## 2. Sign in, and make it yours
 
