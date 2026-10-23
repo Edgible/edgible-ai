@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your AI gateway · Edgible</title>
+  <meta name="description" content="Cost guardrails before you run an agent: one place for your AI keys, a budget for every agent, and the spending in real dollars, on your own machine.">
+  <meta name="theme-color" content="#111827">
+  <link rel="icon" type="image/png" href="../../images/favicon.png">
+  <link rel="alternate" type="text/markdown" title="This page as Markdown" href="../your-ai-gateway.md">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* The main page's typeface, colours, top bar and footer (site/index.html), with styles for reading. */
+    @font-face { font-family: "Nexa"; src: url("../../fonts/Nexa-Regular.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Nexa"; src: url("../../fonts/Nexa-Bold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: swap; }
+    @font-face { font-family: "Nexa"; src: url("../../fonts/Nexa-ExtraBold.otf") format("opentype"); font-weight: 800; font-style: normal; font-display: swap; }
+    /* Playbooks are for doing, so they read on a light page; the dark top bar keeps them Edgible's. */
+    :root {
+      --night-1: #111827;
+      --line: #e3e6ef;
+      --paper: #fbfaf7;
+      --surface: #f1f2f7;
+      --yellow: #ffd21f;
+      --prompt: #fff8d6;
+      --link: #2e4a9e;
+      --heading: #111827;
+      --ink: #2b3245;
+      --muted: #5d6680;
+      --radius: 14px;
+      --wrap: 1120px;
+      --read: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--paper); }
+    body { margin: 0; font-family: Nexa, Jost, system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 17px; color: var(--ink); background: var(--paper); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: var(--link); }
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+
+    header.bar { position: sticky; top: 0; z-index: 10; background: var(--night-1); border-bottom: 1px solid rgba(255,255,255,.12); }
+    header.bar .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo img { display: block; height: 24px; width: auto; }
+    nav.links { display: flex; gap: 24px; font-weight: 500; font-size: 16px; }
+    nav.links a { text-decoration: none; color: #a7b1dc; }
+    nav.links a:hover { color: #ffffff; }
+
+    main { max-width: var(--read); margin: 0 auto; padding: 56px 24px 88px; }
+    h1, h2, h3 { color: var(--heading); line-height: 1.25; font-weight: 800; }
+    h1 { font-size: 40px; margin: 0 0 16px; }
+    h2 { font-size: 26px; margin: 48px 0 12px; }
+    h3 { font-size: 20px; margin: 32px 0 8px; }
+    p, li { max-width: 70ch; }
+    strong { color: var(--heading); }
+    /* A quote is something to say to your AI, or a box such as What you need. */
+    blockquote { margin: 20px 0; padding: 16px 20px; background: var(--prompt); border-left: 4px solid var(--yellow); border-radius: 0 var(--radius) var(--radius) 0; color: var(--heading); }
+    blockquote p { margin: 0; }
+    blockquote p + p, blockquote ul { margin-top: 10px; }
+    code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: .9em; background: var(--surface); padding: 2px 6px; border-radius: 6px; }
+    pre { background: var(--night-1); color: #e6eaff; border-radius: var(--radius); padding: 16px 18px; overflow-x: auto; }
+    pre code { background: none; padding: 0; color: inherit; }
+    details { margin: 24px 0; padding: 12px 18px; background: #ffffff; border: 1px solid var(--line); border-radius: var(--radius); }
+    summary { cursor: pointer; color: var(--heading); font-weight: 700; }
+    table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 16px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--heading); }
+    hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
+    /* The site's icons are drawn light on dark, so on these pages each sits on a navy tile. */
+    h2 .ico { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; background: var(--night-1); margin-right: 12px; vertical-align: middle; flex: none; }
+    h2 .ico svg { width: 30px; height: 30px; }
+    h2:has(.ico) { display: flex; align-items: center; }
+
+    /* Previous and Next, at the end of each chapter. */
+    nav.chapters { display: flex; gap: 14px; margin-top: 56px; flex-wrap: wrap; }
+    nav.chapters a { flex: 1 1 240px; display: block; padding: 16px 20px; border: 1px solid var(--line); border-radius: var(--radius); background: #ffffff; text-decoration: none; color: var(--heading); font-weight: 700; }
+    nav.chapters a:hover { border-color: var(--link); }
+    nav.chapters a span { display: block; font-size: 14px; font-weight: 500; color: var(--muted); margin-bottom: 4px; }
+    nav.chapters a.next { text-align: right; margin-left: auto; }
+    footer { padding: 32px 0; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
+    footer a { color: var(--muted); }
+    footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+
+    @media (max-width: 560px) {
+      .wrap { padding: 0 16px; }
+      main { padding: 40px 16px 64px; }
+      nav.links { gap: 16px; font-size: 15px; }
+      h1 { font-size: 32px; }
+      table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="../../"><img src="../../images/edgible-logo-white.png" alt="Edgible" width="107" height="24"></a>
+    <nav class="links">
+      <a href="../../playbooks/">Playbooks</a>
+      <a href="mailto:stefano@edgible.com?subject=Hello%20Edgible">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+<h1>Your AI gateway</h1>
+<p><em>Chapter 3 of <a href="../your-own-ai-agent/">Your own AI agent, from anywhere</a>. New: tested on our own machines, so <a href="mailto:stefano@edgible.com?subject=Playbook%20feedback">tell us how it goes</a>.</em></p>
+<p>Before you run an agent, put the guardrails in. An AI gateway sits between your agents and the AI providers, and gives you:</p>
+<ul>
+<li><strong>One place for your keys.</strong> You store each provider&#39;s key once. Your agents never see them: each gets its own gateway key instead.</li>
+<li><strong>A budget per agent.</strong> Each agent can spend only its own budget, say five dollars a month. A runaway agent stops at its limit, not at your credit card&#39;s.</li>
+<li><strong>The real dollars.</strong> What each agent spent, on which model, from your phone.</li>
+<li><strong>Models by purpose, not by name.</strong> Agents ask for <em>fast</em>, <em>smart</em> or <em>best</em>, and you decide which model each one means, and change it any time.</li>
+<li><strong>A backup.</strong> When a provider has an outage or a free tier runs out, the next one answers.</li>
+</ul>
+<p>The gateway is LiteLLM, the most widely used open-source AI gateway, in a version we&#39;ve tested.</p>
+<blockquote>
+<p><strong>What you need</strong></p>
+<ul>
+<li>Chapters 1 and 2 done, on a machine with <strong>4 GB of memory</strong> or more.</li>
+<li><strong>A DeepSeek account</strong> with a little credit: <a href="https://platform.deepseek.com">platform.deepseek.com</a>, then API keys. Five dollars goes a long way.</li>
+<li>Optional: <strong>Gemini</strong> as a free backup (<a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a>), <strong>OpenRouter</strong> for open models such as GLM and Kimi, <strong>Anthropic</strong> for Claude Opus when it really matters.</li>
+</ul>
+</blockquote>
+<h2>1. Set up the gateway</h2>
+<p>In Claude, say:</p>
+<blockquote>
+<p>Set up an AI gateway on my edgible-vm, called ai-gateway. I&#39;ll use DeepSeek, with Gemini as a backup.</p>
+</blockquote>
+<p>It checks the machine, then asks you one thing: whether to give the gateway an address your apps can call. Say yes. That address answers only apps holding a key the gateway gave them, and each app gets its own key and budget. Your connector keeps the gateway&#39;s own master key, so you never handle it.</p>
+<h2>2. Store your keys</h2>
+<p>If you stored these keys with Edgible before, Claude simply uses them and skips this step. Otherwise, Claude gives you a <strong>key link</strong> for each provider. Open it, paste the key from the provider&#39;s page, and save. The key goes straight to your Edgible account, never into the chat. Links work once, for ten minutes, and from your phone too.</p>
+<p>You only ever do this once. Every agent you add later uses the same keys, through the gateway.</p>
+<h2>3. Check it answers</h2>
+<blockquote>
+<p>Check my AI gateway answers.</p>
+</blockquote>
+<p>It sends one tiny question through the gateway, and tells you which provider answered, how long it took, and what it cost: a tiny fraction of a cent.</p>
+<h2>The models, by purpose</h2>
+<table>
+<thead>
+<tr>
+<th>Ask for</th>
+<th>Means, to start with</th>
+<th>For</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>fast</strong></td>
+<td>DeepSeek, with Gemini as a backup</td>
+<td>Everyday answers</td>
+</tr>
+<tr>
+<td><strong>smart</strong></td>
+<td>DeepSeek&#39;s reasoning model</td>
+<td>Harder questions</td>
+</tr>
+<tr>
+<td><strong>open</strong></td>
+<td>GLM, through OpenRouter</td>
+<td>Trying strong open models</td>
+</tr>
+<tr>
+<td><strong>best</strong></td>
+<td>Claude Opus, capped at five dollars a month</td>
+<td>When it really matters</td>
+</tr>
+<tr>
+<td><strong>private</strong></td>
+<td>A model on your own machine</td>
+<td>Anything that must not leave it</td>
+</tr>
+</tbody></table>
+<p>Change any of them by asking: <em>&quot;Make smart use Gemini Pro.&quot;</em> A model without a key simply passes to its backup.</p>
+<h2>What you&#39;ve just done</h2>
+<p>You&#39;ve put the guardrails in before letting an agent loose, which is exactly the right order:</p>
+<ul>
+<li><strong>Your keys are in one safe place,</strong> stored once, never written into a chat, a file or an app.</li>
+<li><strong>Every agent you add gets its own key and budget.</strong> If one misbehaves, it stops at its limit, and you can switch it off without touching the others.</li>
+<li><strong>You&#39;ll see the real dollars,</strong> by agent and by model, whenever you ask.</li>
+<li><strong>It&#39;s yours.</strong> No middleman between your agents and the providers, no markup, and nobody else&#39;s dashboard.</li>
+</ul>
+<p>Most people running agents have none of this, and find out at the end of the month.</p>
+<details>
+<summary>Prefer to do it by hand?</summary><p>What Claude does, in order. The gateway is the <a href="https://github.com/edgible-org/cards/tree/main/litellm">litellm card</a>; its README has every step, and our regression runs it as written.</p>
+<ol>
+<li><strong>Store your provider keys</strong> with Edgible, each from a file holding just the key: <code>edgible secret set deepseek --from-file key=deepseek.txt</code>, and the same for <code>gemini</code>. Then delete the files.</li>
+<li><strong>On the machine, the litellm card.</strong> Pass the keys to it by name, then Check, Start, and publish <code>litellm</code> on <code>org</code> (the admin page).</li>
+<li><strong>Publish its API</strong> as <code>litellm-api</code> on <code>none</code>, as the README&#39;s Share it step shows: it answers only keys the gateway issued.</li>
+<li><strong>Check it:</strong> sign in to the admin page as <code>admin</code>, with the master key the README&#39;s <code>show</code> command prints on the machine, and send a test message to <code>fast</code>. The admin page is also where you make agents&#39; keys and see spending.</li>
+</ol>
+<p>Claude does one more thing you don&#39;t need by hand: it gives your connector the gateway&#39;s address and master key, so you can ask Claude about spending.</p>
+</details>
+<nav class="chapters"><a class="prev" href="../connect-claude/"><span>← Previous</span>Connect Claude to your Edgible</a><a class="next" href="../your-agent/"><span>Next →</span>Your agent</a></nav>
+</main>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Edgible. Your data's coming home™ is a trade mark of Edgible.</span>
+    <span><a href="https://cards.edgible.org">Cards</a> · <a href="../../llms.txt">For AI assistants</a> · <a href="../your-ai-gateway.md">This page as Markdown</a></span>
+  </div>
+</footer>
+</body>
+</html>
