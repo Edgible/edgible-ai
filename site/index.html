@@ -562,9 +562,9 @@
     <div class="wrap">
       <p class="kicker">Private or public</p>
       <h2 id="padlock-title">Where is the padlock opened?</h2>
-      <p class="intro">Every private website uses a padlock to scramble what travels between a visitor and the site. Most hosting and tunnel services open that padlock on their own servers, handle the traffic, then pass it on. With Edgible, the padlock stays locked all the way to your machine.</p>
+      <p class="intro">Every private website uses a padlock to encrypt what travels between a visitor and the site. Most hosting and tunnel services open that padlock on their own servers, handle the traffic, then pass it on. With Edgible, the padlock stays locked all the way to your machine.</p>
       <figure class="padlock-fig">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 400" font-family="Nexa, Jost, system-ui, sans-serif" role="img" aria-labelledby="padlock-desc"><title id="padlock-desc">Two routes from a visitor to your machine. With most hosting and tunnel services, the traffic is scrambled on the way in, the service opens the padlock and handles it, then scrambles it again and passes it on. With Edgible, the traffic stays scrambled the whole way. Edgible's gateway passes it along sealed, and only your machine opens it.</title>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 400" font-family="Nexa, Jost, system-ui, sans-serif" role="img" aria-labelledby="padlock-desc"><title id="padlock-desc">Two routes from a visitor to your machine. With most hosting and tunnel services, the traffic is encrypted on the way in, a cloud service opens the padlock and handles it, then encrypts it again and passes it on. With Edgible, the traffic stays encrypted the whole way. Edgible's gateway passes it along sealed, and only your machine opens it.</title>
 <defs>
 <marker id="pa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#a7b1dc"/></marker>
 <g id="pl-c"><rect x="-13" y="-2" width="26" height="20" rx="4" fill="currentColor"/><path d="M-8 -2 V-8 a8 8 0 0 1 16 0 V-2" fill="none" stroke="currentColor" stroke-width="3.5"/></g>
@@ -578,14 +578,15 @@
 <text x="90" y="160" font-size="16" text-anchor="middle" fill="#a7b1dc">A visitor</text>
 <line x1="140" y1="105" x2="395" y2="105" stroke="#a7b1dc" stroke-width="2.5" marker-end="url(#pa)"/>
 <use href="#pl-c" transform="translate(268,80)" color="#ffd21f"/>
-<text x="268" y="136" font-size="16" text-anchor="middle" fill="#a7b1dc">scrambled</text>
+<text x="268" y="136" font-size="16" text-anchor="middle" fill="#a7b1dc">encrypted</text>
+<text x="530" y="38" font-size="15" font-weight="600" text-anchor="middle" fill="#a7b1dc">Cloud service</text>
 <rect x="400" y="48" width="260" height="114" rx="14" fill="rgba(255,255,255,.05)" stroke="#ff7a59" stroke-width="2.5"/>
 <use href="#pl-o" transform="translate(530,84)" color="#ff7a59"/>
 <text x="530" y="128" font-size="17" font-weight="700" text-anchor="middle" fill="#ff7a59">Padlock opened here</text>
 <text x="530" y="149" font-size="14" text-anchor="middle" fill="#a7b1dc">handled, then locked again</text>
 <line x1="660" y1="105" x2="895" y2="105" stroke="#a7b1dc" stroke-width="2.5" marker-end="url(#pa)"/>
 <use href="#pl-c" transform="translate(778,80)" color="#ffd21f"/>
-<text x="778" y="136" font-size="16" text-anchor="middle" fill="#a7b1dc">scrambled again</text>
+<text x="778" y="136" font-size="16" text-anchor="middle" fill="#a7b1dc">encrypted again</text>
 <use href="#house" transform="translate(960,100)"/>
 <text x="960" y="160" font-size="16" text-anchor="middle" fill="#a7b1dc">Your machine</text>
 
@@ -596,19 +597,20 @@
 <text x="90" y="380" font-size="16" text-anchor="middle" fill="#a7b1dc">A visitor</text>
 <line x1="140" y1="325" x2="395" y2="325" stroke="#a7b1dc" stroke-width="2.5" marker-end="url(#pa)"/>
 <use href="#pl-c" transform="translate(268,300)" color="#ffd21f"/>
-<text x="268" y="356" font-size="16" text-anchor="middle" fill="#a7b1dc">scrambled</text>
+<text x="268" y="356" font-size="16" text-anchor="middle" fill="#a7b1dc">encrypted</text>
+<text x="530" y="258" font-size="15" font-weight="600" text-anchor="middle" fill="#a7b1dc">Edgible gateway</text>
 <rect x="400" y="268" width="260" height="114" rx="14" fill="rgba(255,255,255,.05)" stroke="#4fc3a8" stroke-width="2.5"/>
 <use href="#pl-c" transform="translate(530,304)" color="#ffd21f"/>
 <text x="530" y="348" font-size="17" font-weight="700" text-anchor="middle" fill="#4fc3a8">Passed along, still locked</text>
 <text x="530" y="369" font-size="14" text-anchor="middle" fill="#a7b1dc">our gateway can't open it</text>
 <line x1="660" y1="325" x2="895" y2="325" stroke="#a7b1dc" stroke-width="2.5" marker-end="url(#pa)"/>
 <use href="#pl-c" transform="translate(778,300)" color="#ffd21f"/>
-<text x="778" y="356" font-size="16" text-anchor="middle" fill="#a7b1dc">still scrambled</text>
+<text x="778" y="356" font-size="16" text-anchor="middle" fill="#a7b1dc">still encrypted</text>
 <use href="#house" transform="translate(960,320)"/>
 <use href="#pl-o" transform="translate(1020,288)" color="#4fc3a8"/>
 <text x="960" y="380" font-size="16" text-anchor="middle" fill="#a7b1dc">Opened here, only here</text>
         </svg>
-        <figcaption>Our gateway only passes scrambled traffic along. We can see which app was reached and when, not what was said.</figcaption>
+        <figcaption>Our gateway only passes encrypted traffic along. We can see which app was reached and when, not what was said.</figcaption>
       </figure>
       <div class="beliefs two">
         <div class="belief">
