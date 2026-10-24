@@ -42,7 +42,7 @@ Then try the bigger one:
 
 > What has my AI gateway spent, by model?
 
-`private` and `private-smart` appear in the list beside the cloud models, with a tiny cost each. We give them a token price, about a cent for every hundred thousand tokens, so budgets still work on them. Their real cost is your electricity.
+`private` and `private-smart` appear in the list beside the cloud models, with their questions and tokens counted. We give them a token price, about a cent for every hundred thousand tokens, so budgets still work on them, and it rounds to nearly nothing in the report. Their real cost is your electricity.
 
 ## What's different about private
 

@@ -40,14 +40,14 @@ Your agent answers with its own spending against its budget, as before. The priv
 
 ## 4. Use it for what it's good at
 
-A small model on a Mac is good at a lot: summarising, rewording, drafting, explaining, answering from text you paste in. It's less good at being an agent: planning many steps and using tools without losing the thread. [Chapter 5](../choosing-between-them/) is about exactly that.
+A small model on a Mac is good at a lot: summarising, rewording, drafting, explaining, answering from text you paste in. It's less sure at being an agent on a long job: planning many steps and using many tools without drifting. [Chapter 5](../choosing-between-them/) is about exactly that.
 
 ## What you've just done
 
 Your agent now has a private mode:
 
 - **One agent, two worlds.** Cloud models when you want the best answer, your own Mac when you want it private.
-- **You decide per question,** with one tap, and it's visible in the chat.
+- **You decide per question,** with one tap in the model menu.
 - **The budget still applies.** The private model counts toward your agent's budget at a token price, so nothing runs away.
 
 <details>

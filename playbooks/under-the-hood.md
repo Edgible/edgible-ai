@@ -88,7 +88,7 @@ We'd rather you heard these from us:
 - **The private model needs a Mac with Apple silicon today.** A card for Linux with an NVIDIA GPU is planned.
 - **We tested two machines on one computer** (a Mac and a virtual machine on it), not two physical machines on different networks. The path between them is the same Edgible address either way, but we haven't proved it across networks yet.
 - **The guard is a workaround.** Edgible can't yet forward a host name of your choosing to an app, which publishing Ollama directly would need, so a small guard does that part. It works, and it adds one more program to keep up to date.
-- **A small local model is a weaker agent than a cloud one.** It is a good private reader and writer; give your agent a cloud model for tool-heavy work.
+- **A small local model is a less steady agent than a cloud one on long jobs.** A single tool call works, but a long, many-step session drifts. It is a good private reader and writer; give your agent a cloud model for long jobs with many tools.
 
 - **Your agent can't give you key links yet,** so storing a key happens in Claude, not in the agent's chat.
 - **A lost first-use password needs a terminal** to recover today. A no-terminal way is planned.
